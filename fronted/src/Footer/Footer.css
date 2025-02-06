@@ -1,0 +1,37 @@
+.footer{
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+width: 100%;
+}
+.footer-left-side{
+width: 20%;
+}
+.footer-right-side{
+    width: 20%;
+}
+.footer-right-side svg{
+    font-size: 23px;
+    margin-left: 10px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+.footer-right-side svg:hover{
+   opacity: 1.0;
+   transform: scale(1.1);
+   cursor: pointer;
+}
+.footer-middle-side{
+width: 20%;
+}
+.footer-middle-side ul{
+display: flex;
+}
+.footer-middle-side ul li{
+    padding-left: 20px;
+}
+.footer-middle-side ul li:hover{
+    color: black;
+    cursor: pointer;
+}
