@@ -44,7 +44,7 @@ export default function Inference() {
     return (
         <section className="inference">
             <div className="inference-inner">
-                <p className="section-kicker">// inference engineering</p>
+                <p className="section-kicker">inference engineering</p>
                 <h2 className="section-title">Serving models myself, not just calling an API</h2>
                 <p className="inference-lead">
                     There are two ways to put an LLM in front of users. You can <strong>call a managed API</strong> and

@@ -20,7 +20,7 @@ export default function Chenchaiah() {
             <section className="hero">
                 <div className="hero-inner">
                     <span className="hero-badge"><span className="hero-badge-dot" />Open to LLM inference &amp; serving roles</span>
-                    <p className="hero-eyebrow">// AI/ML · LLM INFERENCE &amp; SERVING</p>
+                    <p className="hero-eyebrow">AI/ML · LLM INFERENCE &amp; SERVING</p>
                     <h1 className="hero-title">
                         I make large models <span className="hl">serve fast</span> &amp; cheap.
                     </h1>
@@ -41,7 +41,7 @@ export default function Chenchaiah() {
                         <Link to="/projects" className="btn btn-primary">
                             View projects <HiOutlineArrowNarrowRight />
                         </Link>
-                        <Link to="/resume" className="btn btn-ghost">Résumé</Link>
+                        <Link to="/resume" className="btn btn-ghost">Resume</Link>
                         <a href="mailto:mekalathuru.chenchaiah@gmail.com" className="btn btn-ghost">Contact</a>
                     </div>
 
@@ -63,7 +63,7 @@ export default function Chenchaiah() {
 
             <div className="about-main-container">
                 <div className="intro">
-                    <p className="section-kicker">// about</p>
+                    <p className="section-kicker">about</p>
                     <h2 className="section-title">From first principles, tuned for production</h2>
                     <p>
                         My focus is the inference and serving layer: taking large language and multimodal models and
@@ -88,7 +88,7 @@ export default function Chenchaiah() {
                 <Project />
 
                 <section className="closing-cta">
-                    <p className="section-kicker">// let's talk</p>
+                    <p className="section-kicker">let's talk</p>
                     <h2>Let&apos;s build inference systems that are <span className="hl">measurably</span> fast.</h2>
                     <p className="closing-cta-sub">
                         Open to LLM inference &amp; serving roles. The fastest way to reach me:
@@ -96,7 +96,7 @@ export default function Chenchaiah() {
                     <div className="closing-cta-actions">
                         <a className="btn btn-primary" href="mailto:mekalathuru.chenchaiah@gmail.com">Email me</a>
                         <a className="btn btn-ghost" href="https://www.linkedin.com/in/iamchenchu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <Link className="btn btn-ghost" to="/resume">Résumé</Link>
+                        <Link className="btn btn-ghost" to="/resume">Resume</Link>
                     </div>
                 </section>
             </div>

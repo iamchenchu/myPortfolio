@@ -102,13 +102,13 @@ const projectsData = [
 export default function Projects() {
     return (
         <div className="project-container">
-            <h1>🚀 My Projects</h1>
+            <h1>Projects</h1>
             <div className="projects-list">
                 {projectsData.map((project, index) => {
                   const flagship = ["infertutor", "mla", "byjus-wiz"].includes(project.id);
                   return (
                     <div key={index} className={`project-item${flagship ? " project-item--flagship" : ""}`}>
-                        {flagship && <span className="flagship-badge">★ Flagship · Inference</span>}
+                        {flagship && <span className="flagship-badge">Flagship · Inference</span>}
                         <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
 
                         <div className="project-details">

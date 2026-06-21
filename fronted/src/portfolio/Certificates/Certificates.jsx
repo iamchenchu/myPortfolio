@@ -38,7 +38,7 @@ export default function Certificates() {
 
     return (
             <div className="main-container">
-            <h2>🎓 My Online Course Certificates</h2>
+            <h2>Certifications</h2>
             <hr />
             <br />
             <div className="certificates-list">
