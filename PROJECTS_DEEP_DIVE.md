@@ -37,7 +37,30 @@ so I can carry a 15-minute system-design conversation on any of them.
 12. [Sliding-Window MLA - bounded KV cache research](#12-sliding-window-mla-research)
 13. [GPT From Scratch (124M)](#13-gpt-from-scratch-124m)
 
-[Appendix - LLM architecture & inference timeline](#appendix--llm-architecture--inference-timeline-i-can-defend)
+[Architecture at a glance (every project)](#architecture-at-a-glance-every-project)
+· [Appendix - LLM architecture & inference timeline](#appendix--llm-architecture--inference-timeline-i-can-defend)
+
+---
+
+## Architecture at a glance (every project)
+
+| # | Project | Model / ML architecture | Serving / system architecture |
+|---|---------|--------------------------|-------------------------------|
+| 1 | Doubt-Resolution RAG | LLaMA-7B decoder-only (MHA), LoRA-tuned for embeddings; T5-small (encoder-decoder) fallback generator | RAG: FastAPI on ECS Fargate to SageMaker embed endpoint + FAISS (subject-sharded) with a 0.82 cosine gate |
+| 2 | Live-Class Q&A | LLaMA-2-7B decoder (MHA), prompt-tuned; RoBERTa relevance gate; BERT intent classifier; GPT-2 + RL rewriter | Streaming-ASR context to TorchServe on SageMaker multi-model GPU endpoints; Step Functions + SQS; <2s real-time |
+| 3 | Engagement / Churn | XGBoost (gradient-boosted trees), SMOTE balancing, SHAP explainability | Daily batch: Airflow to EMR Spark features to batch score to Redshift to a Lambda action engine |
+| 4 | Q&A Neural Search | BERT encoder, contrastive-loss fine-tune for similarity; BERT for intent + entity extraction (universal search) | ElasticSearch + Annoy ANN index; Flask APIs |
+| 5 | CV (engagement + watermark) | YOLOv5 one-stage CNN detector; cGAN with U-Net + ResNet-101 generator and a PatchGAN discriminator | Fine-tuned on annotated frames; OpenCV pipeline into DB ingestion |
+| 6 | Liquid Neural Networks | Continuous-time RNN / Neural ODE (CTRNN, NPCs); multi-modal CNN for tumor detection | Research; bounded compute per time-step |
+| 7 | Admissions Automation | sentence-transformers MiniLM encoder embeddings; AI21 Jamba 1.5 (Transformer-Mamba SSM hybrid) classifier | Event-driven: S3 to Lambda to ECS-Fargate parse to Bedrock to DynamoDB to Step Functions; CloudFormation IaC |
+| 8 | Banking Agentic RAG (current) | Multi-agent Planner / Executor / Validator; agentic RAG on Google ADK agent runtime | Hybrid dense + sparse retrieval; served on Red Hat OpenShift (K8s); LangSmith tracing/eval |
+| 9 | NAPA RAG Catalog Search | LLaMA-2-7B fine-tuned embeddings | FAISS IndexFlatIP per category; LangChain retriever + context-compression; SageMaker endpoints; Terraform IaC |
+| 10 | Walmart Checkout CV | YOLOv8 one-stage CNN detector, exported to TorchScript | Edge RTSP to FastAPI/Docker to Redis lookup to Kafka to Cosmos DB; AKS GPU nodes; 120-150 ms/inference |
+| 11 | InferTutor Arena | Qwen3-VL-4B multimodal decoder (GQA attention) | vLLM (PagedAttention + continuous batching) on Modal H100; prefix caching + chunked prefill |
+| 12 | Sliding-Window MLA | MLA latent KV (decoupled RoPE) + sliding-window local attention + a few global anchors | Bounded O(window + anchors) KV cache; baselines: full attn / GQA+window / sparse |
+| 13 | GPT From Scratch | 124M decoder-only Transformer: 12 blocks, multi-head self-attention, BPE tokenizer | GPT-2 weights loaded; fine-tuned for classification / instruction |
+
+**Attention lineage I can speak to:** MHA (2017) to MQA (2019) to GQA (2023, LLaMA-2 70B) to MLA (2024, DeepSeek-V2). BYJU'S 7B models = **MHA**; InferTutor's Qwen3-VL = **GQA**; my MLA work is the **2024+** frontier. (Full timeline in the appendix.)
 
 ---
 
@@ -120,6 +143,8 @@ scale owning the GPU was the only way to control cost and latency.
 
 ## 1. BYJU'S Doubt-Resolution RAG (LLaMA-7B)
 
+**Architecture.** LLaMA-7B decoder-only (MHA), LoRA-tuned into a sentence-embedding model; a subject-sharded FAISS vector index; a T5-small (encoder-decoder) fallback generator. RAG flow: embed to top-3 retrieve to a 0.82 cosine gate to a stored answer or T5 synthesis.
+
 **Problem.** During COVID, sign-ups exploded. The FAQ/doubt portal routed every
 unmatched question to human academic experts; response time stretched to
 **48-72 hours**. The existing search was **keyword-based**, so paraphrased
@@ -163,6 +188,8 @@ Q&A system below.
 ---
 
 ## 2. BYJU'S Live-Class Real-Time Q&A (LLaMA-2)
+
+**Architecture.** LLaMA-2-7B decoder (MHA) prompt-tuned for grounded answering, wrapped by a RoBERTa relevance gate, a BERT intent classifier, and a GPT-2 + RL tone rewriter; lecture context injected from streaming ASR. A multi-model generative pipeline, not a single LLM call.
 
 **Problem.** Phase-2 growth: K-12 evening live classes, **500-1000 students each**,
 doubts via chat with **one moderator** per class. Moderators drowned in hundreds
@@ -210,6 +237,8 @@ inappropriate messages **-80%**; helpfulness **4.5+/5** internally.
 
 ## 3. BYJU'S Student Engagement / Churn Prediction
 
+**Architecture.** XGBoost gradient-boosted trees over Spark-engineered behavioral features (SMOTE for class balance, SHAP for interpretability). Two-stage system: a daily batch scorer feeding a rules-based action engine.
+
 **Problem.** Millions of students; leadership needed to know **who will disengage
 and when**. SQL dashboards were reactive, not predictive, and **500M+ daily
 interaction logs** were too much for SQL/basic ETL (hours of latency).
@@ -245,6 +274,8 @@ marketing cost-per-conversion. Became the core of the student-success platform.
 
 ## 4. BYJU'S Q&A Neural Search + Universal Search (BERT)
 
+**Architecture.** A BERT encoder fine-tuned with contrastive loss for sentence similarity, plus a second BERT for intent + entity extraction. Dual-recall retrieval: ElasticSearch (lexical) and Annoy (vector).
+
 **Problem.** Surface the right existing answer/content for a query at scale, where
 keyword search fails on paraphrase.
 
@@ -265,6 +296,8 @@ resolution**; universal search **F1 0.96** (Text SSR 91%, Image SSR 60%).
 
 ## 5. BYJU'S Computer Vision (YOLOv5 + cGAN)
 
+**Architecture.** YOLOv5, a one-stage CNN object detector, for upper-body detection; and a conditional GAN (U-Net + ResNet-101 generator, PatchGAN discriminator) for watermark removal.
+
 - **Classroom engagement tracking:** fine-tuned **YOLOv5** to detect upper-body
   objects on annotated class footage → **mAP50-95 = 0.922** real-time monitoring.
 - **Watermark removal:** **cGAN** (U-Net + pre-trained **ResNet-101** generator,
@@ -275,6 +308,8 @@ resolution**; universal search **F1 0.96** (Text SSR 91%, Image SSR 60%).
 # University of South Dakota (Aug 2023 - May 2025)
 
 ## 6. USD Liquid Neural Networks + Cancer Detection
+
+**Architecture.** Liquid Neural Networks: continuous-time RNNs / Neural ODEs (CTRNN, NPCs) whose hidden dynamics are solved per time-step; plus a multi-modal CNN for tumor detection.
 
 **Problem / research.** Can continuous-time **Liquid Neural Networks** (CTRNN,
 Neural ODE, NPCs) match deep nets with far fewer parameters, and apply to medical
@@ -289,6 +324,8 @@ organs and imaging modalities with strong results on limited resources →
 per step) - the same instinct behind my later KV-cache/bounded-memory work.
 
 ## 7. USD Graduate Admissions Automation
+
+**Architecture.** A sentence-transformers (MiniLM) encoder for SOP/LOR embeddings feeding an AI21 Jamba 1.5 classifier - a hybrid Transformer + Mamba state-space model - on Bedrock; an event-driven, container-per-stage MLOps pipeline.
 
 **Problem.** Faculty manually reviewed PDF applications (transcripts, SOP, LOR,
 scores); **~70%** of effort was screening obvious admits/rejects; post-COVID spike
@@ -331,6 +368,8 @@ better yield; explainable per-decision metrics.
 
 ## 8. Infosys Banking Agentic RAG (current)
 
+**Architecture.** A multi-agent Planner / Executor / Validator topology doing agentic RAG, on Google's ADK agent runtime (migrated from LangChain/LangGraph); hybrid dense + sparse retrieval; deployed and served on Red Hat OpenShift.
+
 **What I'm building now.** Production **AI agents and agentic RAG** for a banking
 client - multi-agent workflows that answer governed questions over enterprise
 data, **orchestrated and served on Red Hat OpenShift**.
@@ -349,6 +388,8 @@ latency budgets, and **LangSmith** tracing/eval + regression tests in CI/CD.
 evaluation; MLOps + LLMOps (CI/CD, monitoring, prompt/version management).
 
 ## 9. Infosys NAPA Online RAG Catalog Search
+
+**Architecture.** LLaMA-2-7B fine-tuned embeddings over a per-category FAISS IndexFlatIP, with a LangChain retriever + context-compression chain and a clarification sub-chain; SageMaker-served, Terraform-provisioned.
 
 **Problem.** NAPA Online (Original Parts Company) catalog: **800K+ SKUs** by
 brand/year/make/model/subassembly. Keyword search returned irrelevant or
@@ -379,6 +420,8 @@ curation **-60%**; **+30%** sessions leading to conversion; SHAP over embeddings
 to explain query-token ↔ product-attribute alignment.
 
 ## 10. Infosys Walmart Frictionless-Checkout CV POC
+
+**Architecture.** YOLOv8, a one-stage CNN detector exported to TorchScript, inside an edge streaming pipeline: RTSP to FastAPI to Redis lookup to Kafka to Cosmos DB, on AKS GPU nodes.
 
 **Problem.** Remove checkout queues: items placed in a cart should be auto-detected
 from overhead camera and added to a digital cart - contactless, no manual scanning.
@@ -415,6 +458,8 @@ validated real-time detection on a production-like Azure MLOps setup.
 
 ## 11. InferTutor Arena (vLLM + Modal)
 
+**Architecture.** Qwen3-VL-4B, a multimodal decoder-only transformer using GQA attention, served by vLLM (PagedAttention KV cache + continuous batching) on Modal H100s; prefix caching + chunked prefill on top.
+
 **One-liner.** Deploy a multimodal LLM (`Qwen3-VL-4B-Instruct`) on **vLLM** +
 **Modal** H100s, load-test under concurrency, and *tune the serving config* for
 the metrics that decide a serving system's fate.
@@ -432,6 +477,8 @@ continuous batching - that did *not* exist during BYJU'S.
 
 ## 12. Sliding-Window MLA (research)
 
+**Architecture.** Multi-head Latent Attention (compressed latent KV with decoupled RoPE) + sliding-window local attention + a few global anchors, giving an O(window + anchors) cache; baselines are full attention, GQA+window, and sparse.
+
 **Idea.** Bound the **KV cache** for long context: **DeepSeek-V2 latent KV (MLA)**
 + **sliding-window** local attention + a few **global anchors** ⇒ match full-MLA
 quality at an **O(window + anchors)** cache. Measured cache: ~**198 KB** flat vs
@@ -443,6 +490,8 @@ needle-in-a-haystack) are the next milestone.
 > **Note: MLA is 2024.** This is exactly why MLA is *not* in my BYJU'S story.
 
 ## 13. GPT From Scratch (124M)
+
+**Architecture.** A 124M-parameter decoder-only Transformer: 12 blocks of masked multi-head self-attention + MLP, learned positional embeddings, a BPE tokenizer; GPT-2 pretrained weights loaded.
 
 124M-parameter decoder-only Transformer built from first principles (BPE,
 multi-head self-attention, 12 decoder blocks), GPT-2 weights loaded, fine-tuned
