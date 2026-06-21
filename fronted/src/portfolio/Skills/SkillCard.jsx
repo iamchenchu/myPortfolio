@@ -2,34 +2,33 @@ import Project from "../Project/project";
 import "./skill.css";
 
 const skillsData = {
-    "Deep Learning": [
-        "CNNs", "RNNs", "LSTMs", "VANs", "GANs", "MLPs", "Autoencoders", 
-        "Deep Q-Networks", "DDPG", "Transformers", "Federated Learning", 
-        "Fine Tuning", "Image Captioning"
+    "LLM Inference & Serving": [
+        "vLLM", "TensorRT-LLM", "SGLang", "Triton Inference Server", "TGI",
+        "Continuous / in-flight batching", "PagedAttention & KV-cache management",
+        "Prefix caching", "Chunked prefill", "Speculative decoding",
+        "Quantization (FP8 / INT8 / INT4, AWQ, GPTQ)", "Tensor & pipeline parallelism",
+        "TTFT / inter-token latency / throughput / goodput", "p50–p99 latency SLOs",
+        "Modal", "Ray Serve", "GPU profiling (Nsight)", "H100 / A100"
     ],
-    "NLP": [
-        "Text Preprocessing", "Text Classification", "NER", "Text Summarization", 
-        "NLTK/SpaCy", "Language Modeling (Seq2Seq, Transformers)", "Word2Vec", 
-        "Hugging Face", "Python NLTK", "SpaCy", "Bag of Words"
+    "LLMs & Generative AI": [
+        "Transformers (decoder / encoder)", "RAG & vector search", "Fine-tuning (LoRA / QLoRA)",
+        "Multi-Head Latent Attention (MLA)", "GQA / MQA", "Long-context attention",
+        "Agents (LangChain, LangGraph, LlamaIndex)", "Hugging Face", "Ollama",
+        "FAISS / ChromaDB / Pinecone", "Prompt & context engineering", "LLM evaluation"
     ],
-    "Tools & Libraries": [
-        "PyTorch", "Keras", "TensorFlow", "Scikit-learn", "OpenCV", 
-        "Databases (MySQL/MongoDB)", "BI (PowerBI/Tableau)", "Flask", "Django", 
-        "AWS", "Microsoft Azure", "Docker", "Kubernetes", "REST APIs", "Google Cloud Platform (GCP)", 
-        "Hugging Face", "Hadoop", "Apache Kafka", "Databricks", "Command Line", 
-        "Apache Spark", "Ollama", "LlamaIndex", "LangChain", "LangGraph", "LangSmith", 
-        "LangFlow", "Snowflake", "Streamlit", "gRPC", "MongoDB", "DynamoDB", "FastAPI", 
-        "Airflow", "Terraform", "Kubeflow", "ETL", "BigQuery"
+    "Deep Learning & ML": [
+        "PyTorch", "TensorFlow", "Keras", "CUDA", "CNNs / RNNs / LSTMs", "GANs",
+        "Autoencoders", "Reinforcement Learning (DQN, DDPG)", "Liquid Neural Networks",
+        "Scikit-learn", "XGBoost / Gradient Boosting", "Time-series (ARIMA, Prophet)",
+        "Computer Vision (YOLO, U-Net, OpenCV)", "NumPy / Pandas"
+    ],
+    "MLOps & Infrastructure": [
+        "Docker", "Kubernetes", "FastAPI / Flask", "gRPC / REST", "AWS (ECS / EKS / SageMaker)",
+        "GCP", "Azure", "Terraform", "Airflow", "Kubeflow", "CI/CD", "MLflow",
+        "Apache Spark / Kafka", "Databricks", "Snowflake / BigQuery", "Load testing & observability"
     ],
     "Programming Languages": [
-        "Python", "Java", "R", "C/C++", "JavaScript", "CUDA", "Julia", "Rust", 
-        "XML", "Go", "Scala", "HTML/CSS", "React", "AngularJS", "Node.js"
-    ],
-    "Machine Learning": [
-        "Dimensionality Reduction Algorithms", "Matplotlib", "Seaborn", 
-        "Logistic Regression", "Decision Trees", "Random Forest", "SVM", 
-        "Pandas", "K-Nearest Neighbors (KNN)", "Naive Bayes", "K-Means Clustering", 
-        "Gradient Boosting", "AdaBoosting", "NumPy", "RL", "GPU", "Active Learning"
+        "Python", "C/C++", "CUDA", "Go", "Rust", "Java", "Scala", "JavaScript / React", "SQL", "R"
     ]
 };
 
@@ -38,7 +37,7 @@ export default function SkillCard() {
         <>
 
             <div className="skills-container">
-                <h2>💡 My Technical Skills</h2>
+                <h1>💡 My Technical Skills</h1>
                 <hr />
                 <table className="skills-table">
                     <tbody>

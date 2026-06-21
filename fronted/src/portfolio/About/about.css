@@ -5,14 +5,34 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 500px; 
+    height: 600px; 
+   position: relative;
 }
 
+.about-image .about-me{
+position: absolute;
+bottom: 0px;
+background-color: rgba(0, 0, 0, 0.3);
+width: 100%;
+padding: 15px 0px 15px 360px;
+
+}
+.about-image .about-me h1,h3{
+    color: #fff !important;
+}
 .about-experience{
     display: flex;
    background-color: whitesmoke;
    margin:30px 0px;
-
+}
+.about-head{
+    padding: 20px 0px !important;
+}
+.about-me a{
+    color:  rgb(231, 106, 106);
+}
+.about-middle{
+    padding: 20px 0px;
 }
 .about-experience ul{
     padding: 40px;
@@ -34,7 +54,9 @@
     width: 320px;
     height: 250px;
 }
-
+.all-images img:hover{
+    cursor: pointer;
+}
 
 
 /*=============================================================
@@ -129,5 +151,67 @@
 
 
 
-
-
+/*===================================================
+    MEDIA QUERY FOR SMALLER SCREENS (max-width: 576px)
+=====================================================*/
+@media (max-width: 768px) {  
+    /* ABOUT SECTION Adjustments */
+    .about-image {
+        height: 300px; /* reduce height on small screens */
+    }
+    .about-image .about-me {
+        padding: 10px 0px 10px 20px; 
+    }
+    .about-image .about-me h1,
+    .about-image .about-me h3 {
+        font-size: 1rem;  /* slightly smaller text */
+    }
+    .about-experience {
+        flex-direction: column;  /* stack elements vertically */
+        align-items: center;
+    }
+    .about-experience img {
+        width: 100%;
+        height: 250px;
+    }
+    .about-experience ul {
+        padding: 20px;  /* reduce padding */
+    }
+    .all-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+    }
+    .all-images img {
+        width: 100% !important; 
+        height: 240px;
+    }
+    
+    /* PROJECTS SECTION Adjustments */
+    .projects-container {
+        padding: 20px;  /* reduce overall padding */
+    }
+    .projects-title {
+        font-size: 1.5rem;
+    }
+    .projects-grid {
+        gap: 15px;
+    }
+    .project-card {
+        height: auto;  /* allow flexible height */
+        padding: 10px;
+    }
+    .project-image {
+        height: 100px;  /* smaller image height */
+    }
+    .project-title {
+        font-size: 0.9rem;
+    }
+    .project-description {
+        font-size: 0.8rem;
+    }
+    .project-link {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}

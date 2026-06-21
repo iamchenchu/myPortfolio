@@ -20,7 +20,7 @@ export default function Byjus() {
                 <div className="experience-card">
                     <div className="experience-header">
                         <div className="experience-meta">
-                            <h3> Machine Learning Engineer</h3>
+                            <h3>Senior Machine Learning Engineer</h3>
                            <div className="flex">
                            <img src={by} />
                            <h4> Byju's</h4>
@@ -28,7 +28,7 @@ export default function Byjus() {
                         </div>
                         <div className="experience-title">
                             <p className="location">Hyderabad, Telangana, India</p>
-                            <p className="year">Nov 2019 - Jul 20234</p>
+                            <p className="year">Jul 2021 - Jun 2023</p>
                         </div>
                     </div>
     

@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,16 +9,21 @@
 
   body {
     box-sizing: none;
-    line-height: 1.8;
+    line-height: 1.9;
     font-size: 16px;
-    font-family: 'poppins';
+    font-family: "Poppins", serif;
+    font-weight: 300;
     opacity: 0.9;
+    font-style: normal;
     margin: 0;
     font-size: 1rem;
-    font-weight: 400;
     color: #212529;
     text-align: left;
-    background-color: #fff;
+    background-color: #fff; 
+}
+p{
+  font-size: 16px;
+  line-height: 1.9;
 }
 
 li{
@@ -28,8 +34,16 @@ li{
 .main-container{
   width: 60%;
   margin: auto;
-  padding-top: 150px;
+  padding-top: 150px !important;
   background-color: rgba(255,255,255,0.8);
+  background-color: #efe9e912;
+}
+
+.about-main-container{
+  width: 60%;
+  margin: auto;
+  padding:20px !important;
+  background-color: #efe9e912;
 }
 
 .sub-container{
@@ -45,4 +59,38 @@ a{
 .flex{
   display: flex;
   align-items: center;
+}
+h1{
+  color: #212529 !important;
+}
+h2{
+  color: rgb(1, 93, 142);
+}
+
+
+@media(max-width: 768px){
+  .main-container{
+    width: 100%;
+    padding-top: 50px;
+  }
+  .sub-container{
+    padding: 20px 10px;
+  }
+p{
+  font-size: 14px;
+  line-height: 1.8;
+}
+li{
+  font-size: 14px ;
+}
+h1{
+  font-size: 1.4rem;
+}
+h2{
+  font-size: 1rem;
+}
+.about-main-container{
+  width: 100%;
+  padding:10px !important;
+}
 }

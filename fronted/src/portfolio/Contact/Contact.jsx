@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
 import { init, send } from 'emailjs-com'; // Import EmailJS methods
 import "./Contact.css";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -19,10 +20,10 @@ export default function Contact() {
         e.preventDefault();
 
         // Initialize EmailJS
-        init('YOUR_USER_ID'); // Replace with your EmailJS User ID
+        init("nV__FokA94GJl5L0r"); // Replace with your EmailJS User ID
 
         // Send the email via EmailJS
-        send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, "nV__FokA94GJl5L0r")
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
                 alert("Your message has been sent!");
@@ -73,7 +74,7 @@ export default function Contact() {
                     </div>
                     <h4>Website:</h4>
                     <p>
-                        <a href="https://iamchenchu.github.io/Portfolio" target="_blank" rel="noopener noreferrer">
+                        <a href=" https://iamchenchu.github.io/myPortfolio/" target="_blank" rel="noopener noreferrer">
                             Portfolio
                         </a>
                     </p>

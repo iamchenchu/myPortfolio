@@ -1,5 +1,5 @@
 .experience-container {
-    width: 65%;
+    width: 60%;
     margin: auto;
     padding: 20px;
     padding-top: 100px;
@@ -24,6 +24,7 @@
   .experience-card h3 {
     font-size: 20px;
     font-weight: bold;
+    color: #125399 !important;
   }
   
   .experience-card h4 {
@@ -65,10 +66,7 @@
   .pagination span {
     font-size: 16px;
   }
-  
 
-
-  
   .location {
     font-weight: bold;
   }
@@ -87,5 +85,40 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
+
+ }
+
+ @media(max-width: 768px){
+  .experience-container {
+    width: 100%;
+  }
+  
+  .experience-card{
+    padding: 10px;
+  }
+  .experience-header{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .experience-card h3 {
+    font-size: 18px;
+  }
+  
+  .experience-card h4 {
+    font-size: 16px;
+    color: #555;
+  }
+  
+.location {
+  font-size: 15px !important;
+}
+ .experience-container img{
+  width: 25px;
+  height: 25px;
+ }
+ .year {
+  text-align: start;
+}
 
  }

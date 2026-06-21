@@ -50,7 +50,7 @@
   
   .certificate-info h3 {
     font-size: 1.2rem;
-    color: #2a9d8f;
+    color: #2a9d8f !important;
     margin-bottom: 10px;
   }
   

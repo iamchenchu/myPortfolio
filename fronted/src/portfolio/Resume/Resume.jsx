@@ -2,6 +2,9 @@ import React from "react";
 import "./Resume.css";
 
 export default function Resume(){
+  // Base-aware path so the PDF resolves under the GitHub Pages project base
+  // (e.g. /myPortfolio/Chenchaiah.pdf) as well as at the dev-server root.
+  const pdf = `${import.meta.env.BASE_URL}Chenchaiah.pdf`;
   return (
    <>
    <div className="main-container">
@@ -10,7 +13,7 @@ export default function Resume(){
 
       {/* Display Resume inside an iframe */}
       <iframe
-        src="/Chenchaiah.pdf"
+        src={pdf}
         width="100%"
         height="800px"
         title="Resume"
@@ -18,7 +21,7 @@ export default function Resume(){
 
       {/* Download Button */}
       <div className="download-btn">
-        <a href="/Chenchaiah.pdf" download="Chenchaiah.pdf">
+        <a href={pdf} download="Chenchaiah.pdf">
           <button>Download Resume</button>
         </a>
       </div>

@@ -10,52 +10,31 @@ import image_4 from "../../assets/About/fullimage4.jpeg";
 import image2 from "../../assets/About/pres.jpeg";
 import Project from "../Project/project";
 export default function about() {
+    const pdf = `${import.meta.env.BASE_URL}Chenchaiah.pdf`;
     return (
         <>
             <div className="about-image">
-
+              <div className="about-me">
+              <h1> Hi, I am Chenchaiah Mekalathuru.</h1>
+              <h3>Click <a href={pdf}>here</a> to download my CV and check out <a href={import.meta.env.BASE_URL}>my portfolio</a> to see my work.</h3>
+              </div>
             </div>
-            <div className="main-container">
+            <div className="about-main-container">
                 <h2>About</h2>
                 <hr />
-                <div>
+                <div className="about-head">
                     <p>
-                        Experienced Data Scientist and Machine Learning Engineer with a deep AI research background and a strong track record of developing and managing scalable, AI-driven solutions. Currently advancing Liquid Neural Networks and Generative AI research at the Applied Artificial Intelligence lab, University of South Dakota, with a focus on NLP, Transformers, and vector-based AI applications. With expertise in cloud platforms like AWS and Azure, I bring hands-on experience in integrating AI/ML pipelines and automating DevOps processes across cloud-native infrastructures. <br />
+                        AI/ML &amp; LLM Inference Engineer with a research background and a strong track record of building and serving scalable, AI-driven systems. My focus is the inference and serving layer: making large language and multimodal models fast, cheap, and reliable in production with vLLM, TensorRT-LLM, and Triton — optimizing the metrics that decide a serving system&apos;s fate (p95 time-to-first-token, inter-token latency, throughput, goodput-per-GPU) through KV-cache management, continuous batching, prefix caching, chunked prefill, speculative decoding, and quantization on H100/A100. <br />
 
-                        Previously, as a Senior Manager at BYJUS, I led cross-functional teams to exceed performance benchmarks, managing complex projects from ideation through strategic solutions . Proficient in tools and technologies like LangChain, TensorFlow, PyTorch, Docker, Kubernetes, and infrastructure automation (Terraform, CloudFormation), I am adept at building CI/CD pipelines for AI/ML workloads and deploying containerized applications in environments like AWS ECS and EKS. <br />
+                        Most recently I researched long-context efficiency — Sliding-Window MLA, which combines DeepSeek-V2 latent KV compression with sliding-window attention and global anchors to bound the KV cache — and built InferTutor Arena, a multimodal LLM serving system on vLLM + Modal load-tested under concurrent traffic. Earlier, as a Senior Machine Learning Engineer at BYJU&apos;S, I shipped neural search, recommendations, and computer-vision systems serving millions of users, deploying models with Flask/FastAPI, Docker, and Kubernetes. <br />
 
-                        A quick learner and T-shaped professional, I am passionate about leveraging AIOps and vector databases like Pinecone and FAISS for predictive analytics and operational automation. I thrive in collaborative settings, bringing a blend of technical depth and strategic management skills to every project. Let’s connect to discuss how I can contribute to driving AI-driven innovations and operational efficiencies within your team. <br />
+                        I am comfortable across the stack — PyTorch and CUDA up through MLOps (AWS ECS/EKS, Terraform, CI/CD) and vector databases (FAISS, ChromaDB, Pinecone) for RAG. I care about systems that are not just accurate but <em>measurably</em> efficient under real load. Let&apos;s connect to talk about LLM inference, serving, and long-context efficiency. <br />
                     </p>
                     <p>Follow me on : <a href="https://www.linkedin.com/in/iamchenchu/"><FaLinkedin /></a> &nbsp;
                         <a href="https://github.com/iamchenchu">  <FaGithub /></a> &nbsp;
                         <a href="https://medium.com/@chenchaiah.mekalathuru"><FaMedium /></a>  </p>
                 </div>
-              <br />
-                <div>
-                    <h2>President</h2>
-                    <p>Applied Artificial Intelligence (𝟚ᗩ𝕀) Club</p>
-                    <p>Aug 2024 - Dec 2024</p>
-                    <p>Vermillion, South Dakota, United States </p>
-                    <hr />
-                    <div className="about-experience">
-                        <ul>
-                            <li><b>Led peer learning sessions</b> on the fundamentals of AI, guiding participants through the process of building a mini ChatGPT model from scratch</li>
-                            <li><b>Engaged in research discussions</b> on cutting-edge AI advancements, staying updated with industry trends and emerging technologies.</li>
-                            <li><b>Facilitated career development</b>, offering valuable insights from industry experts at MAANG companies to help individuals navigate their professional growth in AI and tech.</li>
-                        </ul>
-                        <img src={image} alt="" />
-
-                    </div> <br />
-                    <h2>Presentations & Lectures</h2>
-                    <div className="all-images">
-                  
-                        <img src={image_2} alt="" />
-                        <img src={image_3} alt="" />
-                        <img src={image_4} alt="" />
-                    </div>
-                </div>
                 <br />
-
                 <div>
                     <h2>Research Assistant</h2>
                     <p><a href="https://www.linkedin.com/company/kc-2ai/posts/?feedView=all">USD Applied Artificial Intelligence Research Lab (𝟚ᗩ𝕀)</a></p>
@@ -79,8 +58,40 @@ export default function about() {
                         <img src={image2} alt="" />
                     </div>
                 </div>
-                <Project/>
-             
+                <br />
+                <div className="about-middle">
+                    <h2>President</h2>
+                    <p>Applied Artificial Intelligence (𝟚ᗩ𝕀) Club</p>
+                    <p>Aug 2024 - Dec 2024</p>
+                    <p>Vermillion, South Dakota, United States </p>
+                    <hr />
+                    <div className="about-experience">
+                        <ul>
+                            <li><b>Led peer learning sessions</b> on the fundamentals of AI, guiding participants through the process of building a mini ChatGPT model from scratch</li>
+                            <li><b>Engaged in research discussions</b> on cutting-edge AI advancements, staying updated with industry trends and emerging technologies.</li>
+                            <li><b>Facilitated career development</b>, offering valuable insights from industry experts at MAANG companies to help individuals navigate their professional growth in AI and tech.</li>
+                        </ul>
+                        <img src={image} alt="" />
+
+                    </div> <br />
+                    <h2>Presentations & Lectures</h2>
+                    <div className="all-images">
+                        <a href="https://www.linkedin.com/in/iamchenchu/recent-activity/all/" target="_blank" rel="noopener noreferrer">
+                            <img src={image_2} alt="image1" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/iamchenchu/recent-activity/all/" target="_blank" rel="noopener noreferrer">
+                            <img src={image_3} alt="image2" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/iamchenchu/recent-activity/all/" target="_blank" rel="noopener noreferrer">
+                            <img src={image_4} alt="image3" />
+                        </a>
+                    </div>
+                </div>
+              
+
+              
+                <Project />
+
             </div>
         </>
     )

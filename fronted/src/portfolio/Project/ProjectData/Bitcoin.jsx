@@ -2,19 +2,20 @@
 import React from "react";
 import"./comman.css";
 import bitcoinImage from "../../../assets/Project/bitcoin.jpg";
+import Project from "../project";
 
 export default function BitcoinPredict() {
     return (
         <div className="project-container">
             <div className="project-detail">
                 <h2>Bitcoin Predict - Time Series Forecasting</h2>
-                <img src={bitcoinImage} alt="Bitcoin Predict" className="projectImg" />
+     
                 
                 <p>
                     Built a deep learning model using TensorFlow for predicting Bitcoin prices, leveraging time series forecasting techniques. The model processes historical price data to predict future trends, providing users with insights into potential Bitcoin price movements.
                 </p>
-
-                <h4>Approach and Methodology</h4>
+                <img src={bitcoinImage} alt="Bitcoin Predict" className="projectImg" />
+                <h3>Approach and Methodology</h3>
                 <div className=" ">
                     <ul>
                         <li><strong>Data Processing:</strong> Utilized Pandas for data manipulation and cleaning, ensuring accurate training data from historical Bitcoin price datasets.</li>
@@ -39,6 +40,7 @@ export default function BitcoinPredict() {
                     View on GitHub
                 </a>
             </div>
+            <Project/>
         </div>
     );
 }

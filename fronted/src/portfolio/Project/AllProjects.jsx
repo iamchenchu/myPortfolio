@@ -10,9 +10,61 @@ import wonderlust from "../../assets/Project/wonderlust.png";
 import ai from "../../assets/Project/ai.jpeg";
 import gpt from "../../assets/Project/gpt.png";
 import rga from "../../assets/Project/rga.jpeg";
+import algorithm from "../../assets/Project/algorithm.webp";
 import { Link } from "react-router-dom";
 
+
 const projectsData = [
+    {
+        id:"infertutor",
+        image: gpt,
+        title: "InferTutor Arena — Multimodal LLM Serving on vLLM + Modal",
+        description: "Deployed Qwen3-VL on vLLM/Modal H100s and tuned continuous batching, prefix caching & chunked prefill to drive down p95 TTFT and inter-token latency while raising goodput-per-GPU.",
+        techStack: ["vLLM", "Modal", "H100", "KV-cache", "Continuous Batching", "Load Testing"],
+        liveLink: "#",
+        github: "#",
+        page:"/project/infertutor",
+    },
+    {
+        id:"mla",
+        image: algorithm,
+        title: "Sliding-Window MLA — Bounded KV Cache for Long Context",
+        description: "Research combining DeepSeek-V2 latent KV (MLA) with sliding-window local attention and a few global anchors to match full-MLA quality at an O(window + anchors) cache — benchmarked on RULER, LongBench and needle-in-a-haystack.",
+        techStack: ["PyTorch", "MLA", "Decoupled RoPE", "Long-Context", "RULER", "LongBench"],
+        liveLink: "#",
+        github: "#",
+        page:"/project/mla",
+    },
+    {
+        id:"gpt",
+        image: gpt,
+        title: "GPT From Scratch – 124M Decoder-Only Transformer",
+        description: "Built a 124M-parameter GPT from scratch (BPE tokenizer, multi-head self-attention, 12 decoder blocks), loaded GPT-2 weights, and fine-tuned it for classification and instruction tasks.",
+        techStack: ["Python", "PyTorch", "Transformers", "BPE"],
+        liveLink: "#",
+        github: "#",
+        page:"/project/gpt",
+    },
+    {
+        id:"rga",
+        image: rga,
+        title: "RAG-DeepSeek — Conversational AI over PDFs",
+        description: "Retrieval-augmented chat over documents using DeepSeek-R1 (Ollama), LangChain, and FAISS/ChromaDB with sub-second retrieval and a Streamlit UI.",
+        techStack: ["LangChain", "FAISS", "ChromaDB", "DeepSeek-R1", "Streamlit"],
+        liveLink: "#",
+        github: "#",
+        page:"/project/rga",
+    },
+    {
+        id:"ai-powered",
+        image: ai,
+        title: "AI-Powered Real Estate Matching",
+        description: "GPT-4 + vector search (ChromaDB) that converts buyer preferences into structured queries and auto-generates personalized property descriptions in under 15 seconds per listing.",
+        techStack: ["Python", "OpenAI", "ChromaDB", "RAG", "NLP"],
+        liveLink: "#",
+        github: "#",
+        page:"/project/ai",
+    },
     {
         id:"bitcoin",
         image: bitcoin,
@@ -22,36 +74,6 @@ const projectsData = [
         liveLink: "#",
         github: "#",
         page:"/project/bitcoin",
-    },
-    {
-        id:"ai-powered",
-        image: ai,
-        title: "AI-Powered Real Estate Matching",
-        description: "Implemented GPT-4 for auto-generating property descriptions with high accuracy.",
-        techStack: ["Python", "PyTorch", "OpenAI", "LLMs", "Seaborn"],
-        liveLink: "#",
-        github: "#",
-        page:"/project/ai",
-    },
-    {
-        id:"gpt",
-        image: gpt,
-        title: "GPT From Scratch – Personal Assistant and Classifier ",
-        description: "Implemented GPT-4 for auto-generating property descriptions with high accuracy.",
-        techStack: ["Python", "PyTorch"],
-        liveLink: "#",
-        github: "#",
-        page:"/project/gpt",
-    },
-    {
-        id:"rga",
-        image: rga,
-        title: " RAG-Deepseek  ",
-        description: "Implemented GPT-4 for auto-generating property descriptions with high accuracy.",
-        techStack: ["Python", "PyTorch"],
-        liveLink: "#",
-        github: "#",
-        page:"/project/rga",
     },
     {
         id:"wonderlust",
@@ -70,14 +92,14 @@ const projectsData = [
 export default function Projects() {
     return (
         <div className="project-container">
-            <h2>🚀 My Projects</h2>
+            <h1>🚀 My Projects</h1>
             <div className="projects-list">
                 {projectsData.map((project, index) => (
                     <div key={index} className="project-item">
                         <img src={project.image} alt={project.title} className="project-image" />
 
                         <div className="project-details">
-                            <h3 className="project-title">{project.title}</h3>
+                            <p className="project-title">{project.title}</p>
                             <p className="project-description">{project.description}</p>
 
                             <div className="tech-stack">
@@ -96,6 +118,7 @@ export default function Projects() {
                     </div>
                 ))}
             </div>
+     
         </div>
     );
 }
