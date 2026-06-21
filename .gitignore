@@ -1,0 +1,4 @@
+# Local-only working docs - keep on disk, never push to GitHub
+PROJECTS_DEEP_DIVE.md
+PROJECT_MEMORY.md
+todo.md
