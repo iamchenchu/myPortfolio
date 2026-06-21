@@ -5,9 +5,10 @@ import sd from "../../assets/Logo/sd.jpeg";
 export default function President() {
     const [showMore, setShowMore] = useState(false);
  const details = [
-    "Worked on Liquid Neural Networks, gained knowledge on multiple research papers (CTRNN, Neural ODE, NPCs) to build models on LNN, also on state-of-the-art architectures in LLM's, NLP, Transformers, Fraud Detection, Generative Al which is resulting in an 80% accuracy in model performance at least.",
-    "Contributed to two projects involving Liquid Neural Networks, focusing on building, training, and evaluating models while working on diverse tasks related to mathematical software development. Developed a model for detecting cancer in images of various organs across different modalities, achieving superior results with limited resources. Authored a research paper based on this work and submitted it to CVPR 2025, currently awaiting the review outcome.",
-    "Enhanced understanding of machine learning and AI concepts among 10+ undergraduate students by guiding them in resolving their doubts and queries, while efficiently managing lab operations using R for practical demonstrations.",
+    "Researched Liquid Neural Networks (CTRNN, Neural ODE, NPCs) and modern Transformer/LLM architectures, building continuous-time models that reached 80%+ accuracy on the target tasks with far fewer parameters than standard deep nets.",
+    "Built a multi-modal cancer-detection model that identifies tumors across different organs and imaging modalities with strong results under tight compute - the basis for a first-author research paper submitted to CVPR 2025.",
+    "Automated first-level graduate-admissions decisions with an MLOps pipeline on AWS: PyMuPDF/Textract document parsing, sentence-transformer scoring, and an AI21 Jamba (Bedrock) classifier returning Admit / Reject / Needs-Review - auto-classified ~65% of applications and cut turnaround from 7-10 days to under 1.",
+    "Mentored 10+ undergraduates on ML and AI fundamentals and ran lab operations, turning research concepts into hands-on practical demonstrations.",
   ];
 
     return (

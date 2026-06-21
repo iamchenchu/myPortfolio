@@ -5,9 +5,9 @@ import by from "../../assets/Logo/by.jpeg";
 export default function ML() {
     const [showMore, setShowMore] = useState(false);
  const details = [
-    "Engineered deep learning models using TensorFlow and PyTorch, achieving a 15% improvement in accuracy on education-related datasets. These models were optimized using a combination of Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs) to better capture both spatial and temporal patterns in student engagement and learning behavior.",
-    " Designed and maintained real-time data pipelines leveraging Apache Spark and Kafka, enabling ingestion and processing of millions of events daily. This architecture led to a 30% reduction in data processing latency, significantly improving the speed of downstream analytics and model responsiveness in production environments.",
-    " Deployed trained ML models into production using Flask-based REST APIs, containerized with Docker, and orchestrated via Kubernetes. These deployments ensured a 95% success rate, supporting fault-tolerant, scalable, and secure delivery of ML services for real-time user interactions."
+    "Built the real-time data backbone (Apache Spark + Kafka) that ingested millions of student events daily and cut processing latency 30% - the foundation later reused by BYJU'S search, recommendation, and engagement-prediction models.",
+    "Trained early CNN/RNN models in TensorFlow and PyTorch for content and engagement tasks, improving accuracy 15% by capturing both spatial and temporal patterns in student learning behavior.",
+    "Productionized ML services as Flask REST APIs containerized with Docker and orchestrated on Kubernetes, reaching a 95% deployment success rate for fault-tolerant, low-latency serving.",
   ];
 
     return (

@@ -5,14 +5,15 @@ import by from "../../assets/Logo/by.jpeg";
 export default function Byjus() {
     const [showMore, setShowMore] = useState(false);
  const details = [
-    "Boosted revenue to $600k/month in qualified sales leads (80% SSR across 2M monthly hits) by building BYJU'S Q&A search system: fine-tuned a BERT model with contrastive loss for similarity, an ElasticSearch + Annoy retrieval pipeline, and Flask APIs for similar-question matching.",
-    "Lifted search accuracy and user experience to an F1 score of 0.96 (Text SSR 91%, Image SSR 60%) by shipping a universal search feature that used BERT Transformers for query-intent recognition and entity extraction.",
-    "Improved math-reasoning and chatbot quality by +13% accuracy on the GSM8k benchmark by fine-tuning open-source LLMs (LLaMA, Falcon) with QLoRA and PEFT.",
-    "Hit a mAP50-95 of 0.922 for real-time classroom engagement tracking by fine-tuning YOLOv5 to detect upper-body objects on annotated classroom footage.",
-    "Built universal 'Trending Content' recommendations with a chi-square statistical model over 10M user interactions to surface trending chapters and subtopics, deployed in production for all BYJU'S users.",
-    "Removed watermarks from solution images with a cGAN (U-Net + pre-trained ResNet-101 generator, PatchGAN discriminator, OpenCV) to clean data for database ingestion.",
-    "Forecasted regional revenue with ARIMA, Prophet, and LSTM models on appointment and demo data to drive strategic and risk-management decisions.",
-    "Drove a 40% revenue increase within three months by managing product feature launches and scaling AI/ML pipelines under an Agile delivery model.",
+    "Contributed to BYJU'S WIZ - the company's in-house generative-AI suite (BADRI knowledge-tracing, MathGPT, and TeacherGPT) launched June 2023 - building transformer/LLM-based tutoring and doubt-solving systems aligned to its ~90% accuracy bar across billions of daily student interactions.",
+    "Built BYJU'S in-house doubt-resolution GPT: a RAG assistant over 5M historical Q&A pairs that cut resolution time from ~36 hours to under 400 ms and auto-resolved 60%+ of academic doubts. LoRA fine-tuned LLaMA-7B embeddings (SageMaker), FAISS sharded by subject for low-latency retrieval, and a T5-small fallback generator; served via FastAPI on ECS Fargate. +13% top-1 semantic-match accuracy.",
+    "Scaled real-time doubt answering to 1,200+ live classes/day (65% fully autonomous, under 2 s latency) with a streaming-context LLM: AWS Transcribe feeds the live lecture as context to a fine-tuned LLaMA-2-7B served on SageMaker (TorchServe, multi-model GPU autoscaling), with a RoBERTa relevance gate and layered safety guardrails. Cut moderator workload 70%.",
+    "Drove $600k/month in qualified sales leads (80% self-serve resolution across 2M monthly hits) with a BERT neural-search engine - contrastive-loss fine-tuning, ElasticSearch + Annoy retrieval, and Flask APIs for similar-question matching.",
+    "Lifted search relevance to an F1 of 0.96 (Text SSR 91%, Image SSR 60%) with a universal search feature using BERT for query-intent recognition and entity extraction.",
+    "Predicted churn for 4M+ students/day over 500M+ daily interaction logs (Spark on EMR, XGBoost AUC 0.89, Airflow) - cut the scoring pipeline's latency 30% and lifted at-risk-cohort retention 18% through personalized nudges.",
+    "Tracked real-time classroom engagement at mAP50-95 of 0.922 by fine-tuning YOLOv5 to detect upper-body objects on annotated class footage.",
+    "Removed watermarks from solution images with a cGAN (U-Net + ResNet-101 generator, PatchGAN discriminator, OpenCV) to clean data for database ingestion.",
+    "Drove a 40% revenue increase in three months by leading product feature launches and scaling the AI/ML pipelines behind them under an Agile delivery model.",
   ];
 
     return (

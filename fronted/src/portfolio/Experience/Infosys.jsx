@@ -2,11 +2,11 @@ import "./Exp.css";
 
 export default function Infosys() {
   const details = [
-    "Architected a governed Planner-Executor-Validator multi-agent system (LangGraph + AutoGen) for enterprise analytics over Microsoft Fabric semantic models, turning natural-language questions into validated, governed insights.",
-    "Built modular LLM pipelines with LangChain for tool-calling, RAG, and prompt orchestration, grounding outputs in trusted enterprise data to cut hallucinations.",
-    "Implemented hybrid retrieval (dense + sparse) to keep answers accurate while holding tight latency budgets.",
-    "Established LangSmith-based tracing and evaluation for prompt/version management and workflow regression testing across releases.",
-    "Applied MLOps + LLMOps practices - CI/CD, monitoring, and continuous optimization - to run multi-agent GenAI systems reliably in production.",
+    "Building production AI agents and agentic RAG for a banking client: orchestrating multi-agent workflows and serving them on Red Hat OpenShift, while migrating the stack from LangChain/LangGraph to Google's Agent Development Kit (ADK) for a cleaner, more governable agent runtime.",
+    "Architected a governed Planner / Executor / Validator multi-agent system (LangGraph + AutoGen) over Microsoft Fabric semantic models, turning natural-language questions into validated, policy-compliant insights with hybrid (dense + sparse) retrieval to stay accurate within tight latency budgets.",
+    "Led a GenAI RAG catalog-search system for NAPA Online (800K+ auto-part SKUs): fine-tuned LLaMA-2 embeddings + FAISS per-category indexes + LangChain retrieval on SageMaker, provisioned with Terraform - cut redundant 'catalog entropy' by 45% and lifted converting sessions 30%.",
+    "Built the computer-vision pipeline for a Walmart frictionless-checkout POC: real-time YOLOv8 detection on Azure AKS with Kafka + Cosmos DB at 120-150 ms/inference - 96.3% cart accuracy and ~80% faster checkout (4.5 min to under 50 s).",
+    "Instrumented every agent and pipeline with LangSmith tracing, evaluation, and regression tests, plus CI/CD and monitoring (MLOps + LLMOps), so multi-agent GenAI systems ship and run reliably in production.",
   ];
 
   return (
