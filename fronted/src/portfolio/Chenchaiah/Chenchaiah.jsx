@@ -24,8 +24,8 @@ export default function Chenchaiah() {
                     </h1>
                     <p className="hero-sub">
                         I&apos;m Chenchaiah Mekalathuru, an AI/ML &amp; LLM Inference Engineer. I tune the serving
-                        layer for the metrics that decide its fate — p95 time-to-first-token, inter-token latency,
-                        throughput and goodput-per-GPU — with vLLM, TensorRT-LLM, Triton, KV-cache management,
+                        layer for the metrics that decide its fate - p95 time-to-first-token, inter-token latency,
+                        throughput and goodput-per-GPU - with vLLM, TensorRT-LLM, Triton, KV-cache management,
                         continuous batching, and quantization on H100/A100.
                     </p>
 
@@ -61,11 +61,11 @@ export default function Chenchaiah() {
                     <p>
                         My focus is the inference and serving layer: taking large language and multimodal models and
                         making them fast, cheap, and reliable under real load. I care about systems that are not just
-                        accurate but <em>measurably</em> efficient — backed by deep-learning and NLP foundations built
+                        accurate but <em>measurably</em> efficient - backed by deep-learning and NLP foundations built
                         from the ground up.
                     </p>
                     <ul className="about-my-skills">
-                        <li>LLM serving on H100/A100 — TTFT, inter-token latency, throughput &amp; goodput tuning.</li>
+                        <li>LLM serving on H100/A100 - TTFT, inter-token latency, throughput &amp; goodput tuning.</li>
                         <li>KV-cache &amp; long-context research: Multi-Head Latent Attention + sliding-window attention.</li>
                         <li>5+ years across ML engineering, MLOps, and Generative AI; M.S. (AI), 4.0 GPA.</li>
                     </ul>

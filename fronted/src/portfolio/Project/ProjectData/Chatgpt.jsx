@@ -8,10 +8,10 @@ export default function Chatgpt() {
     return (
         <div className="project-container">
             <div className="project-detail">
-                <h2>GPT From Scratch – Personal Assistant and Classifier</h2>
+                <h2>GPT From Scratch - Personal Assistant and Classifier</h2>
          
                 <p>
-                    The "GPT From Scratch – Personal Assistant and Classifier" project focuses on developing an advanced GPT-based model from the ground up. With 124 million parameters, this custom-built model integrates key elements like Transformer decoder blocks and multi-head self-attention layers, offering robust performance for classification and instruction-based tasks.
+                    The "GPT From Scratch - Personal Assistant and Classifier" project focuses on developing an advanced GPT-based model from the ground up. With 124 million parameters, this custom-built model integrates key elements like Transformer decoder blocks and multi-head self-attention layers, offering robust performance for classification and instruction-based tasks.
                 </p>
                 <img src={gpt} alt="GPT From Scratch" className="projectImg" />
                 <h3>Technologies and Methods Used</h3>

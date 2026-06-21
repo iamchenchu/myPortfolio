@@ -45,7 +45,7 @@ const cardsData = [
     {
         id:"infertutor",
         image: gpt,
-        title: "InferTutor Arena — Multimodal LLM Serving on vLLM + Modal",
+        title: "InferTutor Arena - Multimodal LLM Serving on vLLM + Modal",
         description: "Deployed Qwen3-VL on vLLM/Modal H100s and tuned continuous batching, prefix caching & chunked prefill to drive down p95 TTFT and inter-token latency.",
         techStack: ["vLLM", "Modal", "H100", "KV-cache", "Load Testing"],
         liveLink: "#",
@@ -55,7 +55,7 @@ const cardsData = [
     {
         id:"mla",
         image: algorithm,
-        title: "Sliding-Window MLA — Bounded KV Cache for Long Context",
+        title: "Sliding-Window MLA - Bounded KV Cache for Long Context",
         description: "Research: combines DeepSeek-V2 latent KV (MLA) with sliding-window attention + global anchors to match full-MLA quality at an O(window + anchors) cache.",
         techStack: ["PyTorch", "MLA", "Long-Context", "RULER", "LongBench"],
         liveLink: "#",
@@ -65,7 +65,7 @@ const cardsData = [
     {
         id:"gpt",
         image: gpt,
-        title: "GPT From Scratch – 124M Decoder-Only Transformer",
+        title: "GPT From Scratch - 124M Decoder-Only Transformer",
         description: "Built a 124M-parameter GPT from scratch (BPE, multi-head attention, decoder blocks), loaded GPT-2 weights, and fine-tuned it for classification.",
         techStack: ["Python", "PyTorch", "Transformers", "BPE"],
         liveLink: "#",
@@ -75,7 +75,7 @@ const cardsData = [
     {
         id:"rga",
         image: rga,
-        title: "RAG-DeepSeek — Conversational AI over PDFs",
+        title: "RAG-DeepSeek - Conversational AI over PDFs",
         description: "Retrieval-augmented chat over documents using DeepSeek-R1 (Ollama), LangChain, and FAISS/ChromaDB with sub-second retrieval.",
         techStack: ["LangChain", "FAISS", "DeepSeek-R1", "Streamlit"],
         liveLink: "#",

@@ -18,7 +18,7 @@ const projectsData = [
     {
         id:"infertutor",
         image: gpt,
-        title: "InferTutor Arena — Multimodal LLM Serving on vLLM + Modal",
+        title: "InferTutor Arena - Multimodal LLM Serving on vLLM + Modal",
         description: "Deployed Qwen3-VL on vLLM/Modal H100s and tuned continuous batching, prefix caching & chunked prefill to drive down p95 TTFT and inter-token latency while raising goodput-per-GPU.",
         techStack: ["vLLM", "Modal", "H100", "KV-cache", "Continuous Batching", "Load Testing"],
         liveLink: "#",
@@ -28,8 +28,8 @@ const projectsData = [
     {
         id:"mla",
         image: algorithm,
-        title: "Sliding-Window MLA — Bounded KV Cache for Long Context",
-        description: "Research combining DeepSeek-V2 latent KV (MLA) with sliding-window local attention and a few global anchors to match full-MLA quality at an O(window + anchors) cache — a flat ~198 KB vs 1.4 GB for full MLA at 1M tokens; RULER / LongBench quality benchmarks are the next milestone.",
+        title: "Sliding-Window MLA - Bounded KV Cache for Long Context",
+        description: "Research combining DeepSeek-V2 latent KV (MLA) with sliding-window local attention and a few global anchors to match full-MLA quality at an O(window + anchors) cache - a flat ~198 KB vs 1.4 GB for full MLA at 1M tokens; RULER / LongBench quality benchmarks are the next milestone.",
         techStack: ["PyTorch", "MLA", "Decoupled RoPE", "Long-Context", "RULER", "LongBench"],
         liveLink: "#",
         github: "#",
@@ -38,7 +38,7 @@ const projectsData = [
     {
         id:"gpt",
         image: gpt,
-        title: "GPT From Scratch – 124M Decoder-Only Transformer",
+        title: "GPT From Scratch - 124M Decoder-Only Transformer",
         description: "Built a 124M-parameter GPT from scratch (BPE tokenizer, multi-head self-attention, 12 decoder blocks), loaded GPT-2 weights, and fine-tuned it for classification and instruction tasks.",
         techStack: ["Python", "PyTorch", "Transformers", "BPE"],
         liveLink: "#",
@@ -48,7 +48,7 @@ const projectsData = [
     {
         id:"rga",
         image: rga,
-        title: "RAG-DeepSeek — Conversational AI over PDFs",
+        title: "RAG-DeepSeek - Conversational AI over PDFs",
         description: "Retrieval-augmented chat over documents using DeepSeek-R1 (Ollama), LangChain, and FAISS/ChromaDB with sub-second retrieval and a Streamlit UI.",
         techStack: ["LangChain", "FAISS", "ChromaDB", "DeepSeek-R1", "Streamlit"],
         liveLink: "#",

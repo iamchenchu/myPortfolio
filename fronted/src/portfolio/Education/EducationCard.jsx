@@ -8,7 +8,7 @@ const educationData = [
     {
         degree: "Master of Science in Computer Science (AI Specialization)",
         university: "University of South Dakota, Vermillion, SD",
-        duration: "Aug 2023 – Dec 2024",
+        duration: "Aug 2023 - Dec 2024",
         logo:sd,
         gpa: "4.0",
         skills: [
@@ -21,7 +21,7 @@ const educationData = [
     {
         degree: "Bachelor of Science in Computer Science",
         university: "Lovely Professional University, Punjab, India",
-        duration: "Aug 2015 – May 2019",
+        duration: "Aug 2015 - May 2019",
         logo:lpu,
         gpa: "3.5",
         skills: [

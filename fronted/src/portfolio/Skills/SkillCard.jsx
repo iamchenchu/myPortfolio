@@ -7,7 +7,7 @@ const skillsData = {
         "Continuous / in-flight batching", "PagedAttention & KV-cache management",
         "Prefix caching", "Chunked prefill", "Speculative decoding",
         "Quantization (FP8 / INT8 / INT4, AWQ, GPTQ)", "Tensor & pipeline parallelism",
-        "TTFT / inter-token latency / throughput / goodput", "p50–p99 latency SLOs",
+        "TTFT / inter-token latency / throughput / goodput", "p50-p99 latency SLOs",
         "Modal", "Ray Serve", "GPU profiling (Nsight)", "H100 / A100"
     ],
     "LLMs & Generative AI": [

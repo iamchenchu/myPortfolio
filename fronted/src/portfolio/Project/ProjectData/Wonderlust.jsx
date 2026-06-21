@@ -8,7 +8,7 @@ export default function Wonderlust() {
     return (
         <div className="project-container">
             <div className="project-detail">
-                <h2>Wonderlust — Full-Stack Travel Platform</h2>
+                <h2>Wonderlust - Full-Stack Travel Platform</h2>
                 <p className="inline-image-text">
                     Wonderlust is a full-stack travel-booking platform where users can browse, create, and
                     review travel listings. It features secure authentication, image uploads, interactive
