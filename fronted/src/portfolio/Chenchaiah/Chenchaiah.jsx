@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Project from "../Project/project.jsx";
 import EducationCard from "../Education/EducationCard.jsx";
 import SkillCard from "../Skills/SkillCard.jsx";
+import Inference from "../Inference/Inference.jsx";
 
 const heroChips = ["vLLM", "TensorRT-LLM", "Triton", "KV-cache", "Quantization", "H100"];
 
@@ -75,6 +76,7 @@ export default function Chenchaiah() {
                     <Link to="/about" className="intro-more">Learn more <HiOutlineArrowNarrowRight /></Link>
                 </div>
 
+                <Inference />
                 <SkillCard />
                 <EducationCard />
                 <Project />

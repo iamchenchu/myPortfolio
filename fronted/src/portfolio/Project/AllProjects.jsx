@@ -36,6 +36,16 @@ const projectsData = [
         page:"/project/mla",
     },
     {
+        id:"byjus-wiz",
+        image: gpt,
+        title: "BYJU'S WIZ - In-House GPTs (BADRI · MathGPT · TeacherGPT)",
+        description: "My contributions to BYJU'S generative-AI suite and the architectures behind it: self-hosted LLaMA/LLaMA-2 tutoring, math reasoning, and doubt-solving on AWS GPUs (SageMaker / TorchServe), with era-accurate building blocks (MHA, BERT, RoBERTa, T5, GPT-2, LoRA/QLoRA) - no MLA/vLLM anachronism.",
+        techStack: ["LLaMA-2", "RAG", "BERT/RoBERTa", "SageMaker", "TorchServe", "MHA / QLoRA"],
+        liveLink: "#",
+        github: "#",
+        page:"/project/byjus-wiz",
+    },
+    {
         id:"gpt",
         image: gpt,
         title: "GPT From Scratch - 124M Decoder-Only Transformer",

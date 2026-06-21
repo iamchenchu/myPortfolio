@@ -51,6 +51,71 @@ curves), **MathGPT** (math solution generation), and **TeacherGPT** (a Socratic
 of daily student interactions. My doubt-resolution and live-class systems were
 part of that same generative-AI push. (Public sources at the end.)
 
+### My contributions to WIZ, mapped to each model
+- **MathGPT** (math solver) - I fine-tuned open decoder LLMs (**LLaMA, Falcon**)
+  for chain-of-thought math reasoning with **QLoRA + PEFT**, lifting GSM8k
+  accuracy **+13%**.
+- **TeacherGPT** (Socratic tutor) - I built the **real-time live-class tutor**
+  (LLaMA-2-7B + streaming-ASR lecture context + RoBERTa relevance gate + layered
+  guardrails) and the **doubt-resolution RAG** assistant (LLaMA-7B embeddings +
+  FAISS + T5 fallback).
+- **BADRI** (knowledge tracing) - adjacent: my engagement/recommendation signals
+  (chi-square "Trending Content"; 500M-log/day XGBoost churn) fed the
+  personalization layer.
+
+### Architectures I implemented (era-accurate, ≤ Jul 2023)
+| Block | Where | Note |
+|---|---|---|
+| **Decoder-only, MHA** | LLaMA-7B, LLaMA-2-7B, Falcon | GQA only in LLaMA-2 34B/70B (new Jul 2023); **no MLA** (that's 2024) |
+| **Encoder (BERT)** | search intent + entity extraction, guardrail intent classifier | |
+| **Encoder (RoBERTa)** | live-class question↔context relevance gate | |
+| **Encoder-decoder (T5-small)** | fallback answer generation | |
+| **GPT-2 + RL** | tone/guardrail rewriter | |
+| **LoRA / QLoRA / PEFT** | all fine-tuning | gradient checkpointing for memory |
+| **BADRI** | self-attention over interaction history + Rasch/IRT difficulty + temporal "DateVec" (forgetting curve) | |
+
+## Self-hosted serving on AWS - "on your own" vs calling an API
+
+This is the crux of why my BYJU'S work is *inference* work, not just "using an LLM."
+
+**Two ways to put a model in front of users:**
+- **Call a managed API** (OpenAI / Anthropic / Bedrock): send text, a provider runs
+  the model on *their* GPUs, pay per token. Zero infra, but data leaves your VPC,
+  you can't tune batching/GPU/tail latency, and cost scales with tokens.
+- **Self-host (what I did):** own the weights, run them on *your* GPUs, control
+  batching, scaling, latency, and cost. This is the surface inference engineers own.
+
+**How I self-served LLMs on AWS at BYJU'S (2021-2023):**
+1. **Package** the fine-tuned model (LLaMA / T5 / BERT) into an inference container -
+   a **TorchServe** `.mar` handler or a custom PyTorch image (tokenizer + pre/post
+   baked in).
+2. **Host on GPU**: **SageMaker real-time endpoints** on `ml.g5 / g4dn / p3`
+   (bring-your-own-container), or **SageMaker multi-model endpoints** to pack many
+   fine-tuned variants on one GPU. (Triton was the alternative for multi-framework
+   dynamic batching on EC2/EKS.)
+3. **Batch**: server-side **dynamic batching** - group concurrent requests up to a
+   max batch size / time window to keep the GPU busy. (Pre-continuous-batching;
+   vLLM's in-flight batching arrived Sep 2023.)
+4. **Scale**: **SageMaker endpoint autoscaling** on invocations / GPU utilization;
+   **SQS** for burst backpressure so nothing drops at peak class hours.
+5. **The path**: app to API Gateway to **FastAPI on ECS Fargate** (CPU
+   orchestration: retrieval + guardrails) to the **SageMaker GPU endpoint** + FAISS;
+   CloudWatch metrics, DynamoDB feedback, Airflow retrains.
+
+**Why self-host at BYJU'S:** millions of *private* student requests had to stay
+in-VPC; the models were *domain fine-tuned* (no public API for them); and at that
+scale owning the GPU was the only way to control cost and latency.
+
+**Same discipline, sharper tools (the progression):**
+| Then - self-hosted on AWS (≤ 2023) | Now - frontier inference (2024+) |
+|---|---|
+| Static / dynamic batching | Continuous (in-flight) batching |
+| Manual KV cache (TorchServe / Triton) | PagedAttention (vLLM) |
+| FP16 serving | FP8 / INT4 quantization (AWQ, GPTQ) |
+| TorchServe / Triton on SageMaker | vLLM / TensorRT-LLM / SGLang |
+| Single GPU endpoint | Tensor / pipeline parallelism |
+| Latency/throughput dashboards | p95 TTFT / ITL / goodput-per-GPU |
+
 ---
 
 ## 1. BYJU'S Doubt-Resolution RAG (LLaMA-7B)

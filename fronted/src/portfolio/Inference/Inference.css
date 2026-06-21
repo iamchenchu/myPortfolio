@@ -1,0 +1,170 @@
+.inference {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: auto;
+  padding: 48px 24px;
+}
+.inference-inner { width: 100%; }
+
+.inference-lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 78ch;
+  margin: 8px 0 28px;
+}
+.inference-lead strong { color: var(--text); }
+
+.inference-subhead {
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  margin: 34px 0 6px;
+}
+.inference-note {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  max-width: 80ch;
+  margin-bottom: 16px;
+}
+
+/* career progression timeline */
+.journey {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin: 0 0 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elev);
+}
+.journey-step {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 16px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.journey-step:last-child { border-right: none; }
+.journey-year {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.journey-step:last-child .journey-year { color: var(--text); }
+.journey-label { font-size: 0.8rem; color: var(--text-muted); line-height: 1.45; }
+
+/* serving vs API comparison */
+.serve-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.serve-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+.serve-card--feature {
+  border-color: var(--accent-border);
+  background: linear-gradient(180deg, var(--accent-soft), transparent 55%), var(--bg-elev);
+  box-shadow: 0 10px 40px -22px var(--accent-glow);
+}
+.serve-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.serve-card--feature .serve-tag { color: var(--accent); }
+.serve-card > p { color: var(--text); font-size: 0.95rem; margin-bottom: 12px; }
+.serve-card ul { display: grid; gap: 7px; }
+.serve-card li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.serve-card li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+
+/* serve steps */
+.serve-steps {
+  display: grid;
+  gap: 10px;
+  counter-reset: step;
+  margin: 8px 0;
+}
+.serve-steps li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+}
+.serve-step-k {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+.serve-step-v { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+/* then -> now */
+.thennow {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+.thennow-head {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0 16px 4px;
+}
+.thennow-head span:last-child { grid-column: 3; color: var(--accent); }
+.thennow-row {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  gap: 12px;
+  align-items: center;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  transition: border-color 0.18s ease;
+}
+.thennow-row:hover { border-color: var(--border-strong); }
+.thennow .then { color: var(--text-muted); font-size: 0.9rem; }
+.thennow .now {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.thennow-arrow { color: var(--accent); text-align: center; font-size: 1.1rem; }
+
+@media (max-width: 768px) {
+  .inference { padding: 32px 16px; }
+  .journey { grid-template-columns: 1fr; }
+  .journey-step { border-right: none; border-bottom: 1px solid var(--border); }
+  .journey-step:last-child { border-bottom: none; }
+  .serve-compare { grid-template-columns: 1fr; }
+  .serve-steps li { grid-template-columns: 1fr; gap: 4px; }
+  .thennow-head { display: none; }
+  .thennow-row { grid-template-columns: 1fr; gap: 4px; text-align: left; }
+  .thennow-arrow { display: none; }
+  .thennow .now::before { content: "→ "; color: var(--accent); }
+}

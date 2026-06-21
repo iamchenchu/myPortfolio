@@ -63,6 +63,16 @@ const cardsData = [
         page:"/project/mla",
     },
     {
+        id:"byjus-wiz",
+        image: gpt,
+        title: "BYJU'S WIZ - In-House GPTs (BADRI · MathGPT · TeacherGPT)",
+        description: "My contributions to BYJU'S generative-AI suite: self-hosted LLaMA/LLaMA-2 tutoring and doubt-solving on AWS GPUs, with the era-accurate architectures (MHA, BERT, RoBERTa, T5, LoRA/QLoRA).",
+        techStack: ["LLaMA-2", "RAG", "SageMaker", "TorchServe", "MHA / QLoRA"],
+        liveLink: "#",
+        github: "#",
+        page:"/project/byjus-wiz",
+    },
+    {
         id:"gpt",
         image: gpt,
         title: "GPT From Scratch - 124M Decoder-Only Transformer",

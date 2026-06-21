@@ -31,6 +31,9 @@ export default function Navbar() {
                 <Link to="/about" className="nav-link" onClick={handleLinkClick}>About</Link>
               </li>
               <li className="nav-item">
+                <Link to="/inference" className="nav-link" onClick={handleLinkClick}>Inference</Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/projects" className="nav-link" onClick={handleLinkClick}>Projects</Link>
               </li>
               <li className="nav-item">

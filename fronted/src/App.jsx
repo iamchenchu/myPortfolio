@@ -22,6 +22,8 @@ import Wonderlust from './portfolio/Project/ProjectData/Wonderlust.jsx'
 import Chatgpt from './portfolio/Project/ProjectData/Chatgpt.jsx'
 import InferTutor from './portfolio/Project/ProjectData/InferTutor.jsx'
 import MLA from './portfolio/Project/ProjectData/MLA.jsx'
+import ByjusWiz from './portfolio/Project/ProjectData/ByjusWiz.jsx'
+import Inference from './portfolio/Inference/Inference.jsx'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
@@ -48,12 +50,14 @@ function App() {
     <Route path='/project/gpt' element={<Chatgpt/>} />
     <Route path='/project/infertutor' element={<InferTutor/>} />
     <Route path='/project/mla' element={<MLA/>} />
+    <Route path='/project/byjus-wiz' element={<ByjusWiz/>} />
     <Route path='/project/wonderlust' element={<Wonderlust/>} />
 
 
 
     <Route path='/' element={<Chenchaiah/>} />
     <Route path='/about' element={<About/>} />
+    <Route path='/inference' element={<Inference/>} />
     <Route path='/projects' element={<AllProjects/>} />
     <Route path='/skills' element={<Skill/>} />
     <Route path='/education' element={<Education/>} />
