@@ -5,13 +5,14 @@ import by from "../../assets/Logo/by.jpeg";
 export default function Byjus() {
     const [showMore, setShowMore] = useState(false);
  const details = [
-    "Developed BYJU's Q&A search system using neural search techniques by fine-tuning a pre-trained BERT model on an in-house Q/A dataset with contrastive loss for similarity, building an ML pipeline with ElasticSearch and Annoy Indexes, and exposing Flask APIs for similar questions, achieving an SSR of 80% with 2 million monthly hits and boosting revenue generation to $600k/month in sales leads.",
-    "Trending Content: built universal recommendations using a statistical model, Used chi-square to detect trends in chapters and subtopics using 10M interaction of data and deployed on production for all Byju's users..",
-    "Elevated AI capabilities for educational applications to 13% accuracy on GSM8k datasets, meeting business objectives by fine-tuning LLaMA and Falcon LLMs.",
-    "Scalability and Agile Development: Managed product feature launches that resulted in a 40% revenue increase within three months,reflecting your skills in scaling solutions critical in AI system deployment and scaling AI/ML pipelines.",
-    "Built a cGAN-based model for watermark removal from solution images, aiding Byjus dB data ingestion. Utilized OpenCV, U-Net with pre-trained ResNet-101, PatchCNN.",
-    "Enhanced classroom engagement tracking by accomplishing a mAP50-95 score of 0.922 as measured by real-time monitoring accuracy in classrooms by fine-tuning YOLOv5 models on annotated data to detect upper body objects effectively.",
-    "Developed revenue forecasting models using ARIMA, Prophet, and LSTM, leveraging regional appointment and demo data to predict trends and drive strategic decisions as part of risk management.",
+    "Boosted revenue to $600k/month in qualified sales leads (80% SSR across 2M monthly hits) by building BYJU'S Q&A search system: fine-tuned a BERT model with contrastive loss for similarity, an ElasticSearch + Annoy retrieval pipeline, and Flask APIs for similar-question matching.",
+    "Lifted search accuracy and user experience to an F1 score of 0.96 (Text SSR 91%, Image SSR 60%) by shipping a universal search feature that used BERT Transformers for query-intent recognition and entity extraction.",
+    "Improved math-reasoning and chatbot quality by +13% accuracy on the GSM8k benchmark by fine-tuning open-source LLMs (LLaMA, Falcon) with QLoRA and PEFT.",
+    "Hit a mAP50-95 of 0.922 for real-time classroom engagement tracking by fine-tuning YOLOv5 to detect upper-body objects on annotated classroom footage.",
+    "Built universal 'Trending Content' recommendations with a chi-square statistical model over 10M user interactions to surface trending chapters and subtopics, deployed in production for all BYJU'S users.",
+    "Removed watermarks from solution images with a cGAN (U-Net + pre-trained ResNet-101 generator, PatchGAN discriminator, OpenCV) to clean data for database ingestion.",
+    "Forecasted regional revenue with ARIMA, Prophet, and LSTM models on appointment and demo data to drive strategic and risk-management decisions.",
+    "Drove a 40% revenue increase within three months by managing product feature launches and scaling AI/ML pipelines under an Agile delivery model.",
   ];
 
     return (
@@ -27,8 +28,8 @@ export default function Byjus() {
                            </div>
                         </div>
                         <div className="experience-title">
-                            <p className="location">Hyderabad, Telangana, India</p>
-                            <p className="year">Jul 2021 - Jun 2023</p>
+                            <p className="location">Hyderabad, Telangana, India · On-site</p>
+                            <p className="year">Jul 2021 - Jul 2023</p>
                         </div>
                     </div>
     

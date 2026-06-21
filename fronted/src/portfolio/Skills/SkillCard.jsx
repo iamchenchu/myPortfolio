@@ -1,4 +1,3 @@
-import Project from "../Project/project";
 import "./skill.css";
 
 const skillsData = {
@@ -8,28 +7,36 @@ const skillsData = {
         "Prefix caching", "Chunked prefill", "Speculative decoding",
         "Quantization (FP8 / INT8 / INT4, AWQ, GPTQ)", "Tensor & pipeline parallelism",
         "TTFT / inter-token latency / throughput / goodput", "p50-p99 latency SLOs",
-        "Modal", "Ray Serve", "GPU profiling (Nsight)", "H100 / A100"
+        "Modal", "Ray Serve", "GPU profiling (Nsight)", "H100 / A100",
+    ],
+    "Agentic AI & LLM Systems": [
+        "Multi-agent orchestration", "Planner / Executor / Validator", "LangGraph", "AutoGen",
+        "LangChain", "LlamaIndex", "Tool / function calling", "RAG pipelines",
+        "Hybrid retrieval (dense + sparse)", "Prompt & context engineering",
+        "Guardrails & governance", "Microsoft Fabric semantic models",
     ],
     "LLMs & Generative AI": [
-        "Transformers (decoder / encoder)", "RAG & vector search", "Fine-tuning (LoRA / QLoRA)",
+        "Transformers (decoder / encoder)", "Fine-tuning (LoRA / QLoRA / PEFT)",
         "Multi-Head Latent Attention (MLA)", "GQA / MQA", "Long-context attention",
-        "Agents (LangChain, LangGraph, LlamaIndex)", "Hugging Face", "Ollama",
-        "FAISS / ChromaDB / Pinecone", "Prompt & context engineering", "LLM evaluation"
+        "BERT & contrastive learning", "Hugging Face", "Ollama",
+        "FAISS / ChromaDB / Pinecone", "Vector / semantic search", "LLM evaluation",
     ],
-    "Deep Learning & ML": [
-        "PyTorch", "TensorFlow", "Keras", "CUDA", "CNNs / RNNs / LSTMs", "GANs",
-        "Autoencoders", "Reinforcement Learning (DQN, DDPG)", "Liquid Neural Networks",
-        "Scikit-learn", "XGBoost / Gradient Boosting", "Time-series (ARIMA, Prophet)",
-        "Computer Vision (YOLO, U-Net, OpenCV)", "NumPy / Pandas"
+    "Deep Learning & Classic ML": [
+        "PyTorch", "TensorFlow", "Keras", "CUDA", "CNNs / RNNs / LSTMs",
+        "GANs / cGAN / U-Net", "Computer Vision (YOLOv5, ResNet, OpenCV)",
+        "Liquid Neural Networks (Neural ODE, CTRNN)", "Reinforcement Learning (DQN, DDPG)",
+        "Time-series (ARIMA, Prophet, LSTM)", "Scikit-learn", "XGBoost / Gradient Boosting",
     ],
-    "MLOps & Infrastructure": [
-        "Docker", "Kubernetes", "FastAPI / Flask", "gRPC / REST", "AWS (ECS / EKS / SageMaker)",
-        "GCP", "Azure", "Terraform", "Airflow", "Kubeflow", "CI/CD", "MLflow",
-        "Apache Spark / Kafka", "Databricks", "Snowflake / BigQuery", "Load testing & observability"
+    "MLOps, LLMOps & Data": [
+        "LangSmith (tracing / eval)", "Prompt & version management", "Regression testing",
+        "Observability & monitoring", "CI/CD", "Docker", "Kubernetes", "FastAPI / Flask",
+        "AWS (ECS / EKS / SageMaker)", "GCP", "Azure", "Terraform", "Airflow", "Kubeflow", "MLflow",
+        "Apache Spark / Kafka", "ElasticSearch / Annoy", "Databricks", "Snowflake / BigQuery",
+        "High-Performance & Distributed Computing",
     ],
     "Programming Languages": [
-        "Python", "C/C++", "CUDA", "Go", "Rust", "Java", "Scala", "JavaScript / React", "SQL", "R"
-    ]
+        "Python", "C/C++", "CUDA", "Go", "Rust", "Java", "Scala", "JavaScript / React", "SQL", "R",
+    ],
 };
 
 export default function SkillCard() {

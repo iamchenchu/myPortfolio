@@ -8,8 +8,8 @@ import SkillCard from "../Skills/SkillCard.jsx";
 const heroChips = ["vLLM", "TensorRT-LLM", "Triton", "KV-cache", "Quantization", "H100"];
 
 const heroStats = [
-    { value: "0 errors", label: "at 50 concurrent users · 1×H100" },
-    { value: "~826 ms", label: "p95 TTFT · InferTutor Arena" },
+    { value: "2M+ / mo", label: "search hits served at BYJU'S (80% SSR)" },
+    { value: "~826 ms", label: "p95 TTFT · 0 errors @ 50 users on 1×H100" },
     { value: "4.0 GPA", label: "M.S. Computer Science (AI)" },
 ];
 

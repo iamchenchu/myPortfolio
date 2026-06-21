@@ -45,3 +45,37 @@
   border-radius: 50%;
   border: 1px solid var(--border);
 }
+
+.edu-note {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.coursework {
+  display: grid;
+  gap: 14px;
+  margin: 10px 0 6px;
+}
+.coursework-term {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.term-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  padding-top: 7px;
+}
+.course-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+@media (max-width: 768px) {
+  .coursework-term { grid-template-columns: 1fr; gap: 6px; }
+  .term-label { padding-top: 0; }
+}
