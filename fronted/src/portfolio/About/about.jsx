@@ -52,7 +52,7 @@ export default function about() {
                             <li>Enhanced understanding of machine learning and AI concepts among 10+ undergraduate students by guiding them in resolving their
                                 doubts and queries, while efficiently managing lab operations using R for practical demonstrations.</li>
                         </ul>
-                        <img src={image2} alt="" />
+                        <img src={image2} alt="" loading="lazy" />
                     </div>
                 </div>
                 <br />
@@ -68,19 +68,19 @@ export default function about() {
                             <li><b>Engaged in research discussions</b> on cutting-edge AI advancements, staying updated with industry trends and emerging technologies.</li>
                             <li><b>Facilitated career development</b>, offering valuable insights from industry experts at MAANG companies to help individuals navigate their professional growth in AI and tech.</li>
                         </ul>
-                        <img src={image} alt="" />
+                        <img src={image} alt="" loading="lazy" />
 
                     </div> <br />
                     <h2>Presentations & Lectures</h2>
                     <div className="all-images">
                         <a href="https://www.linkedin.com/in/iamchenchu/recent-activity/all/" target="_blank" rel="noopener noreferrer">
-                            <img src={image_2} alt="image1" />
+                            <img src={image_2} alt="image1" loading="lazy" />
                         </a>
                         <a href="https://www.linkedin.com/in/iamchenchu/recent-activity/all/" target="_blank" rel="noopener noreferrer">
-                            <img src={image_3} alt="image2" />
+                            <img src={image_3} alt="image2" loading="lazy" />
                         </a>
                         <a href="https://www.linkedin.com/in/iamchenchu/recent-activity/all/" target="_blank" rel="noopener noreferrer">
-                            <img src={image_4} alt="image3" />
+                            <img src={image_4} alt="image3" loading="lazy" />
                         </a>
                     </div>
                 </div>

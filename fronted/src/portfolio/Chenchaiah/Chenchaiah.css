@@ -29,6 +29,33 @@
   margin: auto;
 }
 
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent-glow);
+  animation: hero-pulse 2s infinite;
+}
+@keyframes hero-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(45, 226, 166, 0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(45, 226, 166, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(45, 226, 166, 0); }
+}
+
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.82rem;

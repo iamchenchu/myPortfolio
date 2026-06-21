@@ -19,6 +19,7 @@ export default function Chenchaiah() {
         <>
             <section className="hero">
                 <div className="hero-inner">
+                    <span className="hero-badge"><span className="hero-badge-dot" />Open to LLM inference &amp; serving roles</span>
                     <p className="hero-eyebrow">// AI/ML · LLM INFERENCE &amp; SERVING</p>
                     <h1 className="hero-title">
                         I make large models <span className="hl">serve fast</span> &amp; cheap.
