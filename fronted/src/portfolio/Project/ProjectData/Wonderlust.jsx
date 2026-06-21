@@ -1,6 +1,6 @@
 // src/portfolio/Project/ProjectData/Wonderlust.jsx
 import React from "react";
-import wonderlust from "../../../assets/Project/wonderlust.png";
+import wonderlust from "../../../assets/Project/wonderlust.jpg";
 import "./comman.css";
 import Project from "../project";
 

@@ -44,6 +44,11 @@ export default function Chenchaiah() {
                         <a href="mailto:mekalathuru.chenchaiah@gmail.com" className="btn btn-ghost">Contact</a>
                     </div>
 
+                    <Link to="/inference" className="hero-hook">
+                        I self-host and serve models on my own GPUs, not just call APIs <HiOutlineArrowNarrowRight />
+                    </Link>
+
+
                     <div className="hero-stats">
                         {heroStats.map((s) => (
                             <div className="stat" key={s.value}>

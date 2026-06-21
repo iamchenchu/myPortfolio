@@ -4,7 +4,7 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import "./Project.css";
 import bitcoin from "../../assets/Project/bitcoin.jpg";
-import wonderlust from "../../assets/Project/wonderlust.png";
+import wonderlust from "../../assets/Project/wonderlust.jpg";
 import ai from "../../assets/Project/ai.jpeg";
 import gpt from "../../assets/Project/gpt.png";
 import rga from "../../assets/Project/rga.jpeg";

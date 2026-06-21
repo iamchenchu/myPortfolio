@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "./Certificates.css";
-import ai from "../../assets/certificates/Ai.png";
-import dl from "../../assets/certificates/DL.png";
-import ml from "../../assets/certificates/ML.png";
-import ml2 from "../../assets/certificates/ML2.png";
-import py from "../../assets/certificates/python.png";
-import javaandroid from "../../assets/certificates/javaforAndroid.png";
-import py2 from "../../assets/certificates/python2.png";
-import learnjava from "../../assets/certificates/learnJava.png";
-import dsa from "../../assets/certificates/dsa.png";
-import git from "../../assets/certificates/Git.png";
-import linux from "../../assets/certificates/linux.png";
-import coding from "../../assets/certificates/coding.png";
-import projectmanagement from "../../assets/certificates/projectmangement.png";
+import ai from "../../assets/certificates/Ai.jpg";
+import dl from "../../assets/certificates/DL.jpg";
+import ml from "../../assets/certificates/ML.jpg";
+import ml2 from "../../assets/certificates/ML2.jpg";
+import py from "../../assets/certificates/python.jpg";
+import javaandroid from "../../assets/certificates/javaforAndroid.jpg";
+import py2 from "../../assets/certificates/python2.jpg";
+import learnjava from "../../assets/certificates/learnJava.jpg";
+import dsa from "../../assets/certificates/dsa.jpg";
+import git from "../../assets/certificates/Git.jpg";
+import linux from "../../assets/certificates/linux.jpg";
+import coding from "../../assets/certificates/coding.jpg";
+import projectmanagement from "../../assets/certificates/projectmangement.jpg";
 
 export default function Certificates() {
     const [showAll, setShowAll] = useState(false);
@@ -46,7 +46,7 @@ export default function Certificates() {
                     <div className="certificate-item" key={index}>
                         {/* Display the logo alongside the title and issuer */}
                         <div className="certificate-logo">
-                            <img src={cert.src} alt={cert.alt} />
+                            <img src={cert.src} alt={cert.alt} loading="lazy" />
                         </div>
                         <div className="certificate-info">
                             <h3>{cert.alt}</h3>

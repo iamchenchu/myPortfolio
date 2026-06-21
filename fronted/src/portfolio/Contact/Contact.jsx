@@ -16,23 +16,32 @@ export default function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    // Plug in real EmailJS IDs to send in-app; until then the form falls back to
+    // the visitor's mail client so it always works.
+    const SERVICE_ID = "YOUR_SERVICE_ID";
+    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+    const openMailClient = () => {
+        const subject = encodeURIComponent(formData.subject || `Portfolio contact from ${formData.name}`);
+        const body = encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name} <${formData.email}>`);
+        window.location.href = `mailto:mekalathuru.chenchaiah@gmail.com?subject=${subject}&body=${body}`;
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Initialize EmailJS
-        init("nV__FokA94GJl5L0r"); // Replace with your EmailJS User ID
+        if (SERVICE_ID === "YOUR_SERVICE_ID" || TEMPLATE_ID === "YOUR_TEMPLATE_ID") {
+            openMailClient();
+            return;
+        }
 
-        // Send the email via EmailJS
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, "nV__FokA94GJl5L0r")
-            .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
+        init("nV__FokA94GJl5L0r");
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, "nV__FokA94GJl5L0r")
+            .then(() => {
                 alert("Your message has been sent!");
-                setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
+                setFormData({ name: "", email: "", subject: "", message: "" });
             })
-            .catch((err) => {
-                console.error('FAILED...', err);
-                alert("Something went wrong. Please try again later.");
-            });
+            .catch(() => openMailClient());
     };
 
     return (

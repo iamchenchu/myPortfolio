@@ -73,6 +73,20 @@
   margin-bottom: 44px;
 }
 
+.hero-hook {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed var(--accent-border);
+  transition: color 0.18s ease;
+}
+.hero-hook:hover { color: var(--accent); }
+
 .hero-stats {
   display: flex;
   flex-wrap: wrap;

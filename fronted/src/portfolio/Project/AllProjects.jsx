@@ -6,7 +6,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 // Import Project Images
 import bitcoin from "../../assets/Project/bitcoin.jpg";
-import wonderlust from "../../assets/Project/wonderlust.png";
+import wonderlust from "../../assets/Project/wonderlust.jpg";
 import ai from "../../assets/Project/ai.jpeg";
 import gpt from "../../assets/Project/gpt.png";
 import rga from "../../assets/Project/rga.jpeg";
@@ -106,7 +106,7 @@ export default function Projects() {
             <div className="projects-list">
                 {projectsData.map((project, index) => (
                     <div key={index} className="project-item">
-                        <img src={project.image} alt={project.title} className="project-image" />
+                        <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
 
                         <div className="project-details">
                             <p className="project-title">{project.title}</p>
