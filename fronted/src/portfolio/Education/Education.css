@@ -1,36 +1,47 @@
-.education-section {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .education-card {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+.my-edu { padding: 40px 0; }
+.my-edu > h1 {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  margin-bottom: 6px;
+}
 
-  }
-  
-  .education-card h3 {
-    color: #007bff;
-  }
-  
-  .education-card p {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
-  .education-card ul {
-    margin-top: 10px;
-    padding-left: 20px;
-  }
-  
-  .education-card li {
-    margin-bottom: 5px;
-    list-style:circle;
-  }
-  .my-edu img{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-  }
+.education-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-bottom: 16px;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.education-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+.education-card h2 {
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.education-card .flex { gap: 10px; margin-bottom: 6px; }
+.education-card strong { color: var(--text); }
+.education-card p { margin: 3px 0; font-size: 0.9rem; color: var(--text-muted); }
+.education-card h4 {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 16px 0 8px;
+}
+.education-card ul { padding-left: 1.2rem; }
+.education-card li {
+  list-style: disc;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+.my-edu img {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}

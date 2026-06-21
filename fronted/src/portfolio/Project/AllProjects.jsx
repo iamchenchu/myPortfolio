@@ -29,7 +29,7 @@ const projectsData = [
         id:"mla",
         image: algorithm,
         title: "Sliding-Window MLA — Bounded KV Cache for Long Context",
-        description: "Research combining DeepSeek-V2 latent KV (MLA) with sliding-window local attention and a few global anchors to match full-MLA quality at an O(window + anchors) cache — benchmarked on RULER, LongBench and needle-in-a-haystack.",
+        description: "Research combining DeepSeek-V2 latent KV (MLA) with sliding-window local attention and a few global anchors to match full-MLA quality at an O(window + anchors) cache — a flat ~198 KB vs 1.4 GB for full MLA at 1M tokens; RULER / LongBench quality benchmarks are the next milestone.",
         techStack: ["PyTorch", "MLA", "Decoupled RoPE", "Long-Context", "RULER", "LongBench"],
         liveLink: "#",
         github: "#",

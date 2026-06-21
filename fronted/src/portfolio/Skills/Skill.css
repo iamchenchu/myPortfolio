@@ -1,64 +1,60 @@
 .skills-container {
-    padding: 40px 0px;
-
+  padding: 40px 0;
 }
 
-/* Title */
-.skills-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 20px;
+.skills-groups {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
 }
 
-/* Skills Table */
-.skills-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1rem;
+.skill-group {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.skill-group:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
 }
 
-.skills-table tr {
-    border-bottom: 1px solid #ddd;
+/* feature the LLM Inference & Serving group */
+.skill-group--feature {
+  border-color: var(--accent-border);
+  background:
+    linear-gradient(180deg, var(--accent-soft), transparent 60%),
+    var(--bg-elev);
+  box-shadow: 0 10px 40px -22px var(--accent-glow);
 }
 
-.skills-table tr:last-child {
-    border-bottom: none;
+.skill-group-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.skill-group--feature .skill-group-title { color: var(--accent); }
+.skill-group-star { color: var(--accent); font-size: 0.85rem; }
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-group--feature .pill {
+  border-color: var(--accent-border);
+  color: var(--text);
 }
 
-/* Category Column */
-.category {
-    font-weight: bold;
-    color: #2a9d8f;
-    width: 30%;
-    padding: 12px;
-    text-align: left;
-    font-size: 1.1rem;
-}
-
-/* Skills Column */
-.skills-list {
-    padding: 12px;
-    text-align: left;
-    color: #444;
-    font-size: 1rem;
-}
-
-/* Hover Effect */
-.skills-table tr:hover {
-    background-color: #f8f9fa;
-}
-
-
-
-@media(max-width: 768px){
-    .skills-title {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-    .skills-list {
-        padding: 10px;
-        font-size: 0.85rem;
-    }
+@media (max-width: 768px) {
+  .skills-container { padding: 28px 0; }
+  .skill-group { padding: 18px; }
 }

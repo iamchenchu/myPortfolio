@@ -33,7 +33,7 @@ export default function BitcoinPredict() {
                 <p><strong>Tech Stack:</strong> Python, TensorFlow, Pandas, Matplotlib, LSTM</p>
 
                 <a 
-                    href="https://github.com/yourusername/bitcoin-predict" 
+                    href="https://github.com/iamchenchu"
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="project-link">

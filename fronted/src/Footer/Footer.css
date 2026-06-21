@@ -1,76 +1,59 @@
-footer{
-    background-color: rgba(245, 245, 245, 0.9);
-    padding: 10px 0px;
-    margin-top: 50px;
-}
-.footer{
-display: flex;
-align-items: center !important;
-justify-content: space-between;
-flex-wrap: wrap;
-width: 60%;
-margin: auto;
-}
-.footer-left-side{
-width: 20%;
-}
-.footer-right-side{
-    width: 20%;
-}
-.footer-right-side svg{
-    font-size: 23px;
-    margin-left: 10px;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-.footer-right-side svg:hover{
-   opacity: 1.0;
-   transform: scale(1.1);
-   cursor: pointer;
-}
-.footer-middle-side{
-width: 20%;
-}
-.footer-middle-side ul{
-display: flex;
-}
-.footer-middle-side ul li{
-    padding-left: 20px;
-}
-.footer-middle-side ul li:hover{
-    color: black;
-    cursor: pointer;
+footer {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  background: var(--bg-elev);
+  margin-top: 40px;
 }
 
-@media(max-width: 768px){
-    footer{
-        padding: 10px 0px;
-    }
-    .footer{
-        width: 100%;  
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    .footer-left-side{
-    width: 30% !important;
-    }
-    .footer-middle-side{
-        width: 30%;
-    }
-    .footer-right-side{
-        width: 20% !important;
-        display: flex;
-        align-items: center;
-    }
-    .footer-right-side svg{
-        font-size: 20px;
-        margin-left: 10px;
-    }
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: auto;
+  padding: 26px 24px;
+}
 
-  
-    .footer-middle-side ul li{
-        padding-left: 10px;
-    }
-     
+.footer-left-side p {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.footer-middle-side ul {
+  display: flex;
+  gap: 22px;
+}
+.footer-middle-side li {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+.footer-middle-side li:hover { color: var(--accent); }
+
+.footer-right-side {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer-right-side a { color: var(--text-muted); display: flex; }
+.footer-right-side svg {
+  font-size: 19px;
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+.footer-right-side a:hover svg {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px 16px;
+  }
 }

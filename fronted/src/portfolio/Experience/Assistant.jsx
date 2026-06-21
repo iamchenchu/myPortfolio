@@ -8,7 +8,6 @@ export default function President() {
     "Worked on Liquid Neural Networks, gained knowledge on multiple research papers (CTRNN, Neural ODE, NPCs) to build models on LNN, also on state-of-the-art architectures in LLM's, NLP, Transformers, Fraud Detection, Generative Al which is resulting in an 80% accuracy in model performance at least.",
     "Contributed to two projects involving Liquid Neural Networks, focusing on building, training, and evaluating models while working on diverse tasks related to mathematical software development. Developed a model for detecting cancer in images of various organs across different modalities, achieving superior results with limited resources. Authored a research paper based on this work and submitted it to CVPR 2025, currently awaiting the review outcome.",
     "Enhanced understanding of machine learning and AI concepts among 10+ undergraduate students by guiding them in resolving their doubts and queries, while efficiently managing lab operations using R for practical demonstrations.",
-    "Achieved high user satisfaction by using LLM-driven personalisation, dynamically adjusting property descriptions based on buyer preferences. This demonstrated the impact of contextual augmentation and improved the overall user experience through personalised content generation.",
   ];
 
     return (

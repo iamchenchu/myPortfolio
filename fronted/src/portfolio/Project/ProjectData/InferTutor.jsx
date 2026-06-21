@@ -20,6 +20,16 @@ export default function InferTutor() {
 
                 <img src={gpt} alt="InferTutor Arena — LLM serving" className="projectImg" />
 
+                <h3>My Measured Result — single H100, mixed multimodal workload</h3>
+                <div className="tech-stack">
+                    <ul>
+                        <li><strong>50 concurrent users · 824 requests · 0 errors</strong> (0.0% error rate).</li>
+                        <li><strong>p95 TTFT ≈ 826 ms</strong> (p50 657 ms) — first-token responsiveness under streaming load.</li>
+                        <li><strong>p95 inter-token latency ≈ 20.8 ms</strong> (p50 19.4 ms) — a smooth, non-stuttering stream.</li>
+                        <li><strong>~37.6 tokens/s per request</strong>, ~1,264 stream chunks/s aggregate, 13.7 req/s — all on <strong>one GPU</strong>.</li>
+                    </ul>
+                </div>
+
                 <h3>System &amp; Stack</h3>
                 <div className="tech-stack">
                     <h4>Serving Architecture</h4>

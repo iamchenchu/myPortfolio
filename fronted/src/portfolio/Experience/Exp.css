@@ -1,124 +1,72 @@
 .experience-container {
-    width: 60%;
-    margin: auto;
-    padding: 20px;
-    padding-top: 100px;
-    min-height: 80vh;
-    background-color: #efe9e912;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: auto;
+  padding: 120px 24px 64px;
+  min-height: 80vh;
+}
+.experience-container > h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 4px;
+}
+.experience-container > div > h1 {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin: 32px 0 4px;
+}
 
-  }
-  
-  .section-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .experience-card {
-    border-bottom: 2px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .experience-card h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #125399 !important;
-  }
-  
-  .experience-card h4 {
-    font-size: 18px;
-    color: #555;
-  }
-  
-  .experience-card ul {
-    padding-left: 20px;
-  }
-  
-  .experience-card ul li {
-    margin-bottom: 8px;
-    list-style-type:circle;
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .pagination button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .pagination span {
-    font-size: 16px;
-  }
+.experience-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 18px;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.experience-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
 
-  .location {
-    font-weight: bold;
-  }
-  
-  .year {
-    font-style: italic;
-    text-align: end;
-  }
-  
- .experience-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- }
- .experience-container img{
+.experience-card h3 {
+  font-size: 1.18rem;
+  color: var(--text) !important;
+  letter-spacing: -0.01em;
+}
+.experience-card h4 {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.experience-card ul { padding-left: 1.2rem; margin-top: 14px; }
+.experience-card ul li {
+  list-style: disc;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 9px;
+}
+
+.location { font-weight: 600; color: var(--text-muted); }
+.year { font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent); text-align: end; }
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.experience-container img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-
- }
-
- @media(max-width: 768px){
-  .experience-container {
-    width: 100%;
-  }
-  
-  .experience-card{
-    padding: 10px;
-  }
-  .experience-header{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
-  .experience-card h3 {
-    font-size: 18px;
-  }
-  
-  .experience-card h4 {
-    font-size: 16px;
-    color: #555;
-  }
-  
-.location {
-  font-size: 15px !important;
-}
- .experience-container img{
-  width: 25px;
-  height: 25px;
- }
- .year {
-  text-align: start;
+  border: 1px solid var(--border);
 }
 
- }
+@media (max-width: 768px) {
+  .experience-container { padding: 92px 16px 48px; }
+  .experience-card { padding: 18px; }
+  .experience-header { flex-direction: column; align-items: start; }
+  .experience-card h3 { font-size: 1.05rem; }
+  .year { text-align: start; }
+}

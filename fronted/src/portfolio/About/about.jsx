@@ -51,9 +51,6 @@ export default function about() {
                                 CVPR 2025, currently awaiting the review outcome.</li>
                             <li>Enhanced understanding of machine learning and AI concepts among 10+ undergraduate students by guiding them in resolving their
                                 doubts and queries, while efficiently managing lab operations using R for practical demonstrations.</li>
-                            <li>Achieved high user satisfaction by using LLM-driven personalisation, dynamically adjusting property descriptions based on buyer
-                                preferences. This demonstrated the impact of contextual augmentation and improved the overall user experience through personalised
-                                content generation.</li>
                         </ul>
                         <img src={image2} alt="" />
                     </div>

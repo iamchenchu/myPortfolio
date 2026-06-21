@@ -1,79 +1,151 @@
-.me-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto;
-
+/* ---------------- Hero ---------------- */
+.hero {
+  width: 100%;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 24px 56px;
+  position: relative;
+  overflow: hidden;
+}
+/* faint grid texture behind the hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(120% 80% at 50% 0%, #000 35%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 35%, transparent 78%);
+  pointer-events: none;
 }
 
-.me-para{
-position: absolute;
-margin: auto;
-top: 30%;
-right:20px;
-font-weight: 600;
-font-size: 22px;
-color: rgb(3, 46, 121);
-background-color: rgb(255,255,255,0.8);
-padding: 20px;
+.hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: auto;
 }
 
-
-.container{
-width: 100%;
-
-}
-.my-bg-image{
-    background-image: url("../../assets/About/fullimage3.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 500px; 
-    margin-top: 100px;
-    position: relative;
-}
-.intro a{
-    color: rgb(2, 109, 166);
-}
-.about-my-skills li{
-list-style:circle !important;
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 20px;
 }
 
-/* For laptops and medium-sized screens */
-@media (max-width: 768px){
-    .me-para{
-    position: absolute;
-    margin: auto;
-    top: 55%;
-    right:20px;
-    font-weight: 600;
-    font-size: 20px;
-    color: rgb(3, 46, 121);
-    background-color: rgb(255,255,255,0.8);
-    padding: 20px;
-    display: none;
-    }
-     
-    .container{
-    width: 100%;
-    
-    }
-    .my-bg-image{
-        background-image: url("../../assets/About/fullimage3.jpeg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 100%;
-        height:250px; 
-        margin-top: 20px;
-        position: relative;
-    }
-    .intro a{
-        color: rgb(2, 109, 166);
-    }
-    .about-my-skills li{
-    list-style:circle !important;
-    }
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+  max-width: 16ch;
+  margin-bottom: 22px;
+}
+.hero-title .hl {
+  color: var(--accent);
+  position: relative;
+  white-space: nowrap;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  color: var(--text-muted);
+  max-width: 62ch;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 30px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 44px;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.hero-stats .stat {
+  flex: 1 1 180px;
+  min-width: 170px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.hero-stats .stat:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-3px);
+}
+.hero-stats .stat b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.hero-stats .stat span {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+/* ---------------- About intro block ---------------- */
+.intro {
+  padding: 36px 0 8px;
+}
+.intro h2 { margin-bottom: 14px; }
+.intro p { max-width: 70ch; }
+.intro em { color: var(--text); font-style: italic; }
+
+.about-my-skills {
+  margin: 20px 0;
+  display: grid;
+  gap: 10px;
+}
+.about-my-skills li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--text-muted);
+}
+.about-my-skills li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.intro-contact {
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+}
+.intro-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 110px 16px 40px;
+  }
+  .hero-title { max-width: 100%; }
+  .hero-stats .stat { flex-basis: 100%; }
 }

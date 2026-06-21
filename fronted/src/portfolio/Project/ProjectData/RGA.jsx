@@ -45,7 +45,7 @@ export default function RGA() {
                 <p><strong>Tech Stack:</strong> Python, LangChain, FAISS, ChromaDB, OLamma Deepseek-r1:7b, Streamlit</p>
 
                 <a 
-                    href="https://github.com/yourusername/rag-deepseek" 
+                    href="https://github.com/iamchenchu"
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="project-link">

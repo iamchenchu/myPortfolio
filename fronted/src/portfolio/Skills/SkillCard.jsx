@@ -34,23 +34,28 @@ const skillsData = {
 
 export default function SkillCard() {
     return (
-        <>
+        <div className="skills-container">
+            <p className="section-kicker">// stack</p>
+            <h2 className="section-title">Technical Skills</h2>
 
-            <div className="skills-container">
-                <h1>💡 My Technical Skills</h1>
-                <hr />
-                <table className="skills-table">
-                    <tbody>
-                        {Object.entries(skillsData).map(([category, skills], index) => (
-                            <tr key={index}>
-                                <td className="category">{category}</td>
-                                <td className="skills-list">{skills.join(", ")}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div className="skills-groups">
+                {Object.entries(skillsData).map(([category, skills], index) => (
+                    <div
+                        className={`skill-group${index === 0 ? " skill-group--feature" : ""}`}
+                        key={category}
+                    >
+                        <h3 className="skill-group-title">
+                            {index === 0 && <span className="skill-group-star">★</span>}
+                            {category}
+                        </h3>
+                        <div className="skill-pills">
+                            {skills.map((skill) => (
+                                <span className="pill" key={skill}>{skill}</span>
+                            ))}
+                        </div>
+                    </div>
+                ))}
             </div>
-        
-        </>
+        </div>
     );
 }

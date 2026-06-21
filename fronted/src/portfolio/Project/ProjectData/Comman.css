@@ -1,66 +1,119 @@
+/* ===== Project detail pages (dark) ===== */
+.project-detail {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 34px;
+  margin-bottom: 40px;
+}
 
-.inline-image-text {
- 
-  }
-  
- .projectImg {
-    width: 100%;
-    height: 230px;
-    border-radius: 8px;
-    flex-shrink: 0;
-  }
+.project-detail > h2 {
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
 
-  
-  .project-header {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .project-intro {
-    flex: 1;
-  }
-  
-  .project-intro h2{
-    margin-bottom: 0.5rem;
-    color: #1e3340;
-  }
-  
-  .project-intro p {
-    line-height: 1.6;
-    color: #444;
-  }
-  .project-detail h3{
-    color: #1e3340 !important;
-    font-size: 1.6rem;
-  }
-  .project-detail h4,
-  .project-detail h5 {
-    color: #1e3340;
-    margin-top: 1.5rem;
-  }
-  
-  .project-detail ul {
-    padding-left: 1.5rem;
-    line-height: 1.7;
-    color: #333;
-  }
-  
-  /* .project-link {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.6rem 1.2rem;
-    background-color: #1e3340;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  } */
-  
-  /* .project-link:hover {
-    background-color: #14516b;
-  } */
-  
-  
+.project-detail > p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.projectImg {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin: 8px 0 24px;
+}
+
+.project-detail h3 {
+  color: var(--text) !important;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  margin: 28px 0 4px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.project-detail h3:first-of-type { border-top: none; padding-top: 0; }
+
+.project-detail h4 {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 22px 0 10px;
+}
+
+.project-detail ul {
+  padding-left: 1.3rem;
+  margin-bottom: 8px;
+}
+.project-detail li {
+  list-style: disc;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 7px;
+}
+.project-detail li strong { color: var(--text); font-weight: 600; }
+.project-detail em { color: var(--text); font-style: italic; }
+
+/* the tech-stack wrapper is reused as a plain content block here */
+.project-detail .tech-stack {
+  display: block;
+  padding: 0;
+}
+
+/* code / formula blocks (e.g. the goodput scoring formula) */
+.project-detail code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 5px;
+  padding: 1px 6px;
+}
+.project-detail pre {
+  background: #0c1119;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  overflow-x: auto;
+  margin: 14px 0 18px;
+}
+.project-detail pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.project-detail .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 10px 18px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.project-detail .project-link:hover {
+  background: var(--accent);
+  color: #05221a;
+}
+
+@media (max-width: 768px) {
+  .project-detail { padding: 22px 18px; }
+  .projectImg { max-height: 200px; }
+}

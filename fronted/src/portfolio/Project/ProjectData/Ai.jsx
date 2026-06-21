@@ -54,7 +54,7 @@ export default function Ai() {
                     <p><strong>Tech Stack:</strong> Python, PyTorch, Seaborn, OpenAI GPT-4, ChromaDB</p>
 
                     <a
-                        href="https://github.com/yourusername/ai-real-estate-matching"
+                        href="https://github.com/iamchenchu"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="project-link">

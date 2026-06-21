@@ -51,7 +51,7 @@ export default function Chatgpt() {
                 <p><strong>Tech Stack:</strong> Python, PyTorch, Transformer Models, Bit Pair Encoding (BPE)</p>
 
                 <a 
-                    href="https://github.com/yourusername/gpt-from-scratch" 
+                    href="https://github.com/iamchenchu"
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="project-link">
