@@ -42,9 +42,8 @@ export default function about() {
                     <hr />
                     <div className="about-experience">
                         <ul>
-                            <li>Worked on Liquid Neural Networks, gained knowledge on multiple research papers (CTRNN, Neural ODE, NPCs) to build models on
-                                LNN, also on state-of-the-art architectures in LLM's, NLP, Transformers, Fraud Detection, Generative Al which is resulting in an 80%
-                                accuracy in model performance at least.</li>
+                            <li>Researched Liquid Neural Networks (CTRNN, Neural ODE, NPCs) and state-of-the-art architectures across
+                                LLMs, NLP, Transformers, fraud detection, and Generative AI, reaching at least 80% accuracy on the target tasks.</li>
                             <li>Contributed to two projects involving Liquid Neural Networks, focusing on building, training, and evaluating models while working on
                                 diverse tasks related to mathematical software development. Developed a model for detecting cancer in images of various organs across
                                 different modalities, achieving superior results with limited resources. Authored a research paper based on this work and submitted it to

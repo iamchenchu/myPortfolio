@@ -86,6 +86,19 @@ export default function Chenchaiah() {
                 <SkillCard />
                 <EducationCard />
                 <Project />
+
+                <section className="closing-cta">
+                    <p className="section-kicker">// let's talk</p>
+                    <h2>Let&apos;s build inference systems that are <span className="hl">measurably</span> fast.</h2>
+                    <p className="closing-cta-sub">
+                        Open to LLM inference &amp; serving roles. The fastest way to reach me:
+                    </p>
+                    <div className="closing-cta-actions">
+                        <a className="btn btn-primary" href="mailto:mekalathuru.chenchaiah@gmail.com">Email me</a>
+                        <a className="btn btn-ghost" href="https://www.linkedin.com/in/iamchenchu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <Link className="btn btn-ghost" to="/resume">Résumé</Link>
+                    </div>
+                </section>
             </div>
         </>
     );

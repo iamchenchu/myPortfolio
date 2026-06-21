@@ -104,8 +104,11 @@ export default function Projects() {
         <div className="project-container">
             <h1>🚀 My Projects</h1>
             <div className="projects-list">
-                {projectsData.map((project, index) => (
-                    <div key={index} className="project-item">
+                {projectsData.map((project, index) => {
+                  const flagship = ["infertutor", "mla", "byjus-wiz"].includes(project.id);
+                  return (
+                    <div key={index} className={`project-item${flagship ? " project-item--flagship" : ""}`}>
+                        {flagship && <span className="flagship-badge">★ Flagship · Inference</span>}
                         <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
 
                         <div className="project-details">
@@ -126,7 +129,8 @@ export default function Projects() {
                             <Link to={project.page}  className="project-link">See Details</Link>
                         </div>
                     </div>
-                ))}
+                  );
+                })}
             </div>
      
         </div>

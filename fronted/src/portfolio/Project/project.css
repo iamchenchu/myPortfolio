@@ -19,6 +19,7 @@
 }
 
 .project-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--bg-elev);
@@ -26,6 +27,21 @@
   border-radius: var(--radius);
   overflow: hidden;
   transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.project-item--flagship { border-color: var(--accent-border); }
+.flagship-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: #05221a;
+  background: var(--accent);
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-weight: 600;
 }
 .project-item:hover {
   border-color: var(--accent-border);

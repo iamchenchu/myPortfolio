@@ -25,7 +25,7 @@ export default function Byjus() {
                             <h3>Senior Machine Learning Engineer</h3>
                            <div className="flex">
                            <img src={by} />
-                           <h4> Byju's</h4>
+                           <h4>BYJU'S</h4>
                            </div>
                         </div>
                         <div className="experience-title">

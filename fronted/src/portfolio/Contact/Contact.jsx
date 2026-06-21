@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import { init, send } from 'emailjs-com'; // Import EmailJS methods
 import "./Contact.css";
 import emailjs from "emailjs-com";
@@ -52,41 +52,28 @@ export default function Contact() {
             </div>
 
             <div className="row2">
-                {/* Contact Info Items */}
-                <div className="contact-info-item">
-                    <div className="icon">
-                        <FaPhone />
-                    </div>
-                    <h4>Call Me </h4>
-                    <p>+1 60558-54711</p>
-                </div>
-
-                <div className="contact-info-item">
-                    <div className="icon">
-                        <FaMapMarkerAlt />
-                    </div>
-                    <h4>Address:</h4>
-                    <p>SD, USA</p>
-                </div>
-
-                <div className="contact-info-item ">
-                    <div className="icon">
-                        <FaEnvelope />
-                    </div>
-                    <h4>Email:</h4>
+                <a className="contact-info-item" href="mailto:mekalathuru.chenchaiah@gmail.com">
+                    <div className="icon"><FaEnvelope /></div>
+                    <h4>Email</h4>
                     <p>mekalathuru.chenchaiah@gmail.com</p>
-                </div>
+                </a>
 
-                <div className="contact-info-item ">
-                    <div className="icon">
-                        <FaGlobe />
-                    </div>
-                    <h4>Website:</h4>
-                    <p>
-                        <a href=" https://iamchenchu.github.io/myPortfolio/" target="_blank" rel="noopener noreferrer">
-                            Portfolio
-                        </a>
-                    </p>
+                <a className="contact-info-item" href="https://www.linkedin.com/in/iamchenchu/" target="_blank" rel="noopener noreferrer">
+                    <div className="icon"><FaLinkedin /></div>
+                    <h4>LinkedIn</h4>
+                    <p>in/iamchenchu</p>
+                </a>
+
+                <a className="contact-info-item" href="https://github.com/iamchenchu" target="_blank" rel="noopener noreferrer">
+                    <div className="icon"><FaGithub /></div>
+                    <h4>GitHub</h4>
+                    <p>@iamchenchu</p>
+                </a>
+
+                <div className="contact-info-item">
+                    <div className="icon"><FaMapMarkerAlt /></div>
+                    <h4>Location</h4>
+                    <p>United States · Open to relocation</p>
                 </div>
             </div>
 

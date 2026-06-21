@@ -7,7 +7,7 @@ export default function President() {
  const details = [
         "Elevated club membership by 50% compared to the prior year by introducing agendas that focused on real-world applications of AI and coding workshops, equipped members with skills necessary for successful careers in the tech industry.",
         "Led and organized weekly interactive sessions on AI topics, including building Large Language Models (LLMs) and coding practical AI models from scratch.",
-        "Collaborated with faculty advisors and leading industry experts to design a series of 10 engaging workshops, enhancing members understanding of AI research and career opportunities in advanced technology sectors.",
+        "Collaborated with faculty advisors and leading industry experts to design a series of 10 engaging workshops, enhancing members' understanding of AI research and career opportunities in advanced technology sectors.",
         "Developed and delivered technical lectures on AI concepts such as GPT models, transformers, and neural networks, fostering peer learning and hands-on coding experiences",
         "Implemented agile methodologies by utilizing Scrum to streamline project management of club activities and workshops, ensuring timely delivery and high engagement.",
     ];
